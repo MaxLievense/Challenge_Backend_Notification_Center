@@ -7087,3 +7087,233 @@ Completed 200 OK in 60ms (Views: 36.1ms | ActiveRecord: 10.3ms | Allocations: 17
 
 
   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/" for ::1 at 2022-05-23 19:29:39 +0200
+Processing by NotificationsController#index as HTML
+Completed 401 Unauthorized in 3ms (Allocations: 1761)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-05-23 19:29:39 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.4ms | Allocations: 572)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2321)
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 18863)
+Completed 200 OK in 33ms (Views: 20.8ms | ActiveRecord: 4.2ms | Allocations: 24644)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-05-23 19:29:44 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.0ms | Allocations: 222)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 108)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.7ms | Allocations: 2116)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 5253)
+Completed 200 OK in 16ms (Views: 13.6ms | ActiveRecord: 0.0ms | Allocations: 6594)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-05-23 19:29:45 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1254)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 4131)
+Completed 200 OK in 14ms (Views: 11.3ms | ActiveRecord: 0.0ms | Allocations: 4920)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-05-23 19:29:57 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"henk@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "henk@test.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 221ms (ActiveRecord: 1.7ms | Allocations: 2074)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-05-23 19:29:57 +0200
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1253)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 4130)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 4840)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-05-23 19:30:08 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"henk@test.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "henk@test.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (3.4ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_created_at", "2022-05-23 17:30:08.885254"], ["updated_at", "2022-05-23 17:30:08.885572"], ["id", 1]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 241ms (ActiveRecord: 5.3ms | Allocations: 7192)
+
+
+Started GET "/" for ::1 at 2022-05-23 19:30:08 +0200
+Processing by NotificationsController#index as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/index.html.erb within layouts/application
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications"[0m
+  ↳ app/views/notifications/index.html.erb:5
+  Rendered notifications/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1100)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 4345)
+Completed 200 OK in 12ms (Views: 6.2ms | ActiveRecord: 0.5ms | Allocations: 8209)
+
+
+Started GET "/notifications/new" for ::1 at 2022-05-23 19:30:14 +0200
+Processing by NotificationsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/new.html.erb within layouts/application
+  Rendered notifications/_form.html.erb (Duration: 6.0ms | Allocations: 2594)
+  Rendered notifications/new.html.erb within layouts/application (Duration: 7.2ms | Allocations: 2910)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 5918)
+Completed 200 OK in 19ms (Views: 10.6ms | ActiveRecord: 0.3ms | Allocations: 9014)
+
+
+Started POST "/notifications" for ::1 at 2022-05-23 19:30:16 +0200
+Processing by NotificationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "notification"=>{"title"=>"Test", "description"=>"<div>33</div>"}, "commit"=>"Create Notification"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.5ms | Allocations: 2719)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (User(#43620) expected, got "henk@test.com" which is an instance of String(#5540)):
+  
+app/controllers/notifications_controller.rb:25:in `create'
+Started GET "/notifications/new" for ::1 at 2022-05-23 19:31:18 +0200
+Processing by NotificationsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/new.html.erb within layouts/application
+  Rendered notifications/_form.html.erb (Duration: 2.7ms | Allocations: 2338)
+  Rendered notifications/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2469)
+  Rendered layout layouts/application.html.erb (Duration: 26.1ms | Allocations: 18825)
+Completed 200 OK in 47ms (Views: 27.2ms | ActiveRecord: 6.2ms | Allocations: 28084)
+
+
+Started POST "/notifications" for ::1 at 2022-05-23 19:31:21 +0200
+Processing by NotificationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "notification"=>{"title"=>"Test", "description"=>"<div>333</div>"}, "commit"=>"Create Notification"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/notifications_controller.rb:28:in `block in create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notifications_controller.rb:28:in `block in create'
+  [1m[36mNotification Create (1.4ms)[0m  [1m[32mINSERT INTO "notifications" ("title", "description", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Test"], ["description", nil], ["created_at", "2022-05-23 17:31:21.432470"], ["updated_at", "2022-05-23 17:31:21.432470"], ["user_id", 1]]
+  ↳ app/controllers/notifications_controller.rb:28:in `block in create'
+  [1m[36mActionText::RichText Create (1.1ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "description"], ["body", "<div>333</div>"], ["record_type", "Notification"], ["record_id", 1], ["created_at", "2022-05-23 17:31:21.451517"], ["updated_at", "2022-05-23 17:31:21.451517"]]
+  ↳ app/controllers/notifications_controller.rb:28:in `block in create'
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 1], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  ↳ app/controllers/notifications_controller.rb:28:in `block in create'
+  [1m[36mNotification Update (0.5ms)[0m  [1m[33mUPDATE "notifications" SET "updated_at" = $1 WHERE "notifications"."id" = $2[0m  [["updated_at", "2022-05-23 17:31:21.455305"], ["id", 1]]
+  ↳ app/controllers/notifications_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/notifications_controller.rb:28:in `block in create'
+Redirected to http://localhost:3000/notifications/1
+Completed 302 Found in 66ms (ActiveRecord: 7.6ms | Allocations: 22320)
+
+
+Started GET "/notifications/1" for ::1 at 2022-05-23 19:31:21 +0200
+Processing by NotificationsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notifications_controller.rb:66:in `set_notification'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/show.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Notification"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:16
+  Rendered /home/maxl/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 1.3ms | Allocations: 581)
+  Rendered notifications/_notification.html.erb (Duration: 5.3ms | Allocations: 2816)
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."notification_id" = $1[0m  [["notification_id", 1]]
+  ↳ app/views/notifications/_comments.html.erb:4
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 30)
+  Rendered comments/_new.html.erb (Duration: 5.3ms | Allocations: 2483)
+  Rendered notifications/_comments.html.erb (Duration: 12.5ms | Allocations: 6476)
+  Rendered notifications/show.html.erb within layouts/application (Duration: 22.9ms | Allocations: 10906)
+  Rendered layout layouts/application.html.erb (Duration: 26.2ms | Allocations: 14024)
+Completed 200 OK in 33ms (Views: 23.9ms | ActiveRecord: 3.5ms | Allocations: 17092)
+
+
+Started GET "/cable" for ::1 at 2022-05-23 19:31:21 +0200
+Started GET "/cable/" [WebSocket] for ::1 at 2022-05-23 19:31:21 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMQ
+Started GET "/notifications" for ::1 at 2022-05-23 19:31:25 +0200
+Processing by NotificationsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/index.html.erb within layouts/application
+  [1m[36mNotification Load (0.4ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications"[0m
+  ↳ app/views/notifications/index.html.erb:5
+  [1m[36mActionText::RichText Load (0.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Notification"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:16
+  Rendered /home/maxl/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.8ms | Allocations: 330)
+  Rendered notifications/_notification.html.erb (Duration: 5.5ms | Allocations: 1839)
+  Rendered notifications/index.html.erb within layouts/application (Duration: 9.0ms | Allocations: 2658)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 5777)
+Completed 200 OK in 22ms (Views: 14.9ms | ActiveRecord: 1.1ms | Allocations: 7677)
+
+
+Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_name":"IloybGtPaTh2Ym05MGFXWnBZMkYwYVc5dUxXTmxiblJsY2k5T2IzUnBabWxqWVhScGIyNHZNUSI=--cbdeeeee4c993522e3cf79f8a80089f33d0a34556e9e12173b608ac0b52f5f12"}
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMQ
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" ORDER BY "notifications"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" ORDER BY "notifications"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" ORDER BY "notifications"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mNotification Load (0.8ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" ORDER BY "notifications"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/notifications" for ::1 at 2022-05-23 19:35:16 +0200
+Processing by NotificationsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/index.html.erb within layouts/application
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications"[0m
+  ↳ app/views/notifications/index.html.erb:5
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:9
+  [1m[36mActionText::RichText Load (0.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Notification"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:18
+  Rendered /home/maxl/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 1.3ms | Allocations: 568)
+  Rendered notifications/_notification.html.erb (Duration: 8.1ms | Allocations: 3970)
+  Rendered notifications/index.html.erb within layouts/application (Duration: 11.2ms | Allocations: 5206)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 8762)
+Completed 200 OK in 24ms (Views: 18.2ms | ActiveRecord: 1.0ms | Allocations: 11026)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2022-05-23 19:35:16 +0200
+Started GET "/notifications/1" for ::1 at 2022-05-23 19:35:53 +0200
+Processing by NotificationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNotification Load (0.4ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notifications_controller.rb:66:in `set_notification'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:9
+  [1m[36mActionText::RichText Load (0.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Notification"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:18
+  Rendered /home/maxl/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 1.2ms | Allocations: 291)
+  Rendered notifications/_notification.html.erb (Duration: 10.0ms | Allocations: 2201)
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."notification_id" = $1[0m  [["notification_id", 1]]
+  ↳ app/views/notifications/_comments.html.erb:4
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 16)
+  Rendered comments/_new.html.erb (Duration: 1.5ms | Allocations: 717)
+  Rendered notifications/_comments.html.erb (Duration: 5.5ms | Allocations: 1785)
+  Rendered notifications/show.html.erb within layouts/application (Duration: 18.1ms | Allocations: 4837)
+  Rendered layout layouts/application.html.erb (Duration: 24.9ms | Allocations: 7825)
+Completed 200 OK in 34ms (Views: 24.8ms | ActiveRecord: 2.3ms | Allocations: 10119)
+
+
+Started GET "/cable" for ::1 at 2022-05-23 19:35:53 +0200
+Started GET "/cable/" [WebSocket] for ::1 at 2022-05-23 19:35:53 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMQ
+Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_name":"IloybGtPaTh2Ym05MGFXWnBZMkYwYVc5dUxXTmxiblJsY2k5T2IzUnBabWxqWVhScGIyNHZNUSI=--cbdeeeee4c993522e3cf79f8a80089f33d0a34556e9e12173b608ac0b52f5f12"}
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMQ
