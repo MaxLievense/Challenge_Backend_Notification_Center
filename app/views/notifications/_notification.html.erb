@@ -5,7 +5,9 @@
   </p>
 
   <p>
-    Send <%= time_tag notification.created_at, "data-local":"time-ago" %>
+    <strong>Sender:</strong>
+    <%= User.find(notification.user_id).email%>
+    Sent <%= time_tag notification.created_at, "data-local":"time-ago" %>
   </p>
 
   

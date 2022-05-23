@@ -22,7 +22,8 @@ class NotificationsController < ApplicationController
   # POST /notifications or /notifications.json
   def create
     @notification = Notification.new(notification_params)
-
+    @notification.user_id = current_user.id
+    
     respond_to do |format|
       if @notification.save
         format.html { redirect_to notification_url(@notification), notice: "Notification was successfully created." }
