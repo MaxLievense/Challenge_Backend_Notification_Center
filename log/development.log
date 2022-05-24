@@ -10314,3 +10314,1717 @@ Processing by NotificationsController#index as TURBO_STREAM
 Completed 200 OK in 35ms (Views: 20.6ms | ActiveRecord: 4.2ms | Allocations: 16323)
 
 
+Started GET "/notifications" for ::1 at 2022-05-24 10:59:46 +0200
+Processing by NotificationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/index.html.erb within layouts/application
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."email" = $1[0m  [["email", "henk@test.com"]]
+  ↳ app/views/notifications/index.html.erb:12
+  [1m[36mUser Load (13.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 17.5ms | Allocations: 1678)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 5.6ms | Allocations: 673)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 1.4ms | Allocations: 598)
+  Rendered notifications/index.html.erb within layouts/application (Duration: 34.2ms | Allocations: 6085)
+  Rendered layout layouts/application.html.erb (Duration: 95.0ms | Allocations: 22770)
+Completed 200 OK in 113ms (Views: 80.4ms | ActiveRecord: 20.7ms | Allocations: 31461)
+
+
+Started GET "/notifications" for ::1 at 2022-05-24 11:00:18 +0200
+Processing by NotificationsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/index.html.erb within layouts/application
+  [1m[36mNotification Load (0.2ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."email" = $1[0m  [["email", "henk@test.com"]]
+  ↳ app/views/notifications/index.html.erb:13
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 2.1ms | Allocations: 886)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 1.9ms | Allocations: 673)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 1.2ms | Allocations: 598)
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notifications/index.html.erb:32
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 1.5ms | Allocations: 597)
+  Rendered notifications/index.html.erb within layouts/application (Duration: 13.2ms | Allocations: 5117)
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 8648)
+Completed 200 OK in 42ms (Views: 19.2ms | ActiveRecord: 1.4ms | Allocations: 11049)
+
+
+Started GET "/notifications" for ::1 at 2022-05-24 11:01:11 +0200
+Processing by NotificationsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/index.html.erb within layouts/application
+  Rendered notifications/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1399)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 1494)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.6ms | Allocations: 3904)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <p style="color: green"><%= notice %></p>
+
+<%= link_to "New notification", new_notification_path %>
+
+<h1>Inbox</h1>
+<div id="notifications_received">
+  <table>
+    <tr>
+      <th>From</th>
+      <th>Subject</th>
+      <th>When</th>
+    </tr>
+  <% @notifications_received.each do |notification| %>
+    <tr>
+      <%= render notification %>
+      <td>
+        <%= link_to "Open", notification %>
+      </td>
+    </tr>
+  <% end %>
+  <table>
+</div>
+
+<h1>Sent</h1>
+<div id="notifications_received">
+  <table>
+    <tr>
+      <th>From</th>
+      <th>Subject</th>
+      <th>When</th>
+    </tr>
+  <% @notifications_sent.each do |notification| %>
+    <tr>
+      <%= render notification %>
+      <td>
+        <%= if notification.seen ? "Unread" : "Read"%>
+      </td>
+      <td>
+        <%= link_to "Open", notification %>
+      </td>
+    </tr>
+  <% end %>
+  <table>
+</div>
+
+):
+1:    <p style="color: green"><%= notice %></p>
+2:    
+3:    <%= link_to "New notification", new_notification_path %>
+4:    
+5:    <h1>Inbox</h1>
+6:    <div id="notifications_received">
+7:      <table>
+8:        <tr>
+9:          <th>From</th>
+10:          <th>Subject</th>
+11:          <th>When</th>
+12:        </tr>
+13:      <% @notifications_received.each do |notification| %>
+14:        <tr>
+15:          <%= render notification %>
+16:          <td>
+17:            <%= link_to "Open", notification %>
+18:          </td>
+19:        </tr>
+20:      <% end %>
+21:      <table>
+22:    </div>
+23:    
+24:    <h1>Sent</h1>
+25:    <div id="notifications_received">
+26:      <table>
+27:        <tr>
+28:          <th>From</th>
+29:          <th>Subject</th>
+30:          <th>When</th>
+31:        </tr>
+32:      <% @notifications_sent.each do |notification| %>
+33:        <tr>
+34:          <%= render notification %>
+35:          <td>
+36:            <%= if notification.seen ? "Unread" : "Read"%>
+37:          </td>
+38:          <td>
+39:            <%= link_to "Open", notification %>
+40:          </td>
+41:        </tr>
+42:      <% end %>
+43:      <table>
+44:    </div>
+  
+app/views/notifications/index.html.erb:36: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/notifications/index.html.erb:42: syntax error, unexpected `end', expecting ')'
+app/views/notifications/index.html.erb:47: syntax error, unexpected `end', expecting ')'
+app/views/notifications/index.html.erb:36: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/notifications/index.html.erb:42: syntax error, unexpected `end', expecting ')'
+app/views/notifications/index.html.erb:47: syntax error, unexpected `end', expecting ')'
+app/views/notifications/index.html.erb:36: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/notifications/index.html.erb:42: syntax error, unexpected `end', expecting ')'
+app/views/notifications/index.html.erb:47: syntax error, unexpected `end', expecting ')'
+app/views/notifications/index.html.erb:36: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/notifications/index.html.erb:42: syntax error, unexpected `end', expecting ')'
+app/views/notifications/index.html.erb:47: syntax error, unexpected `end', expecting ')'
+app/views/notifications/index.html.erb:36: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/notifications/index.html.erb:42: syntax error, unexpected `end', expecting ')'
+app/views/notifications/index.html.erb:47: syntax error, unexpected `end', expecting ')'
+app/views/notifications/index.html.erb:36: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/notifications/index.html.erb:42: syntax error, unexpected `end', expecting ')'
+app/views/notifications/index.html.erb:47: syntax error, unexpected `end', expecting ')'
+Started GET "/notifications" for ::1 at 2022-05-24 11:01:18 +0200
+Processing by NotificationsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/index.html.erb within layouts/application
+  Rendered notifications/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1383)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 1478)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.4ms | Allocations: 3962)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <p style="color: green"><%= notice %></p>
+
+<%= link_to "New notification", new_notification_path %>
+
+<h1>Inbox</h1>
+<div id="notifications_received">
+  <table>
+    <tr>
+      <th>From</th>
+      <th>Subject</th>
+      <th>When</th>
+    </tr>
+  <% @notifications_received.each do |notification| %>
+    <tr>
+      <%= render notification %>
+      <td>
+        <%= link_to "Open", notification %>
+      </td>
+    </tr>
+  <% end %>
+  <table>
+</div>
+
+<h1>Sent</h1>
+<div id="notifications_received">
+  <table>
+    <tr>
+      <th>From</th>
+      <th>Subject</th>
+      <th>When</th>
+    </tr>
+  <% @notifications_sent.each do |notification| %>
+    <tr>
+      <%= render notification %>
+      <td>
+        <%= if notification.seen ? "Unread" : "Read" end%>
+      </td>
+      <td>
+        <%= link_to "Open", notification %>
+      </td>
+    </tr>
+  <% end %>
+  <table>
+</div>
+
+):
+1:    <p style="color: green"><%= notice %></p>
+2:    
+3:    <%= link_to "New notification", new_notification_path %>
+4:    
+5:    <h1>Inbox</h1>
+6:    <div id="notifications_received">
+7:      <table>
+8:        <tr>
+9:          <th>From</th>
+10:          <th>Subject</th>
+11:          <th>When</th>
+12:        </tr>
+13:      <% @notifications_received.each do |notification| %>
+14:        <tr>
+15:          <%= render notification %>
+16:          <td>
+17:            <%= link_to "Open", notification %>
+18:          </td>
+19:        </tr>
+20:      <% end %>
+21:      <table>
+22:    </div>
+23:    
+24:    <h1>Sent</h1>
+25:    <div id="notifications_received">
+26:      <table>
+27:        <tr>
+28:          <th>From</th>
+29:          <th>Subject</th>
+30:          <th>When</th>
+31:        </tr>
+32:      <% @notifications_sent.each do |notification| %>
+33:        <tr>
+34:          <%= render notification %>
+35:          <td>
+36:            <%= if notification.seen ? "Unread" : "Read" end%>
+37:          </td>
+38:          <td>
+39:            <%= link_to "Open", notification %>
+40:          </td>
+41:        </tr>
+42:      <% end %>
+43:      <table>
+44:    </div>
+  
+app/views/notifications/index.html.erb:36: syntax error, unexpected `end', expecting `then' or ';' or '\n'
+app/views/notifications/index.html.erb:42: syntax error, unexpected `end', expecting ')'
+app/views/notifications/index.html.erb:47: syntax error, unexpected `end', expecting ')'
+app/views/notifications/index.html.erb:36: syntax error, unexpected `end', expecting `then' or ';' or '\n'
+app/views/notifications/index.html.erb:42: syntax error, unexpected `end', expecting ')'
+app/views/notifications/index.html.erb:47: syntax error, unexpected `end', expecting ')'
+app/views/notifications/index.html.erb:36: syntax error, unexpected `end', expecting `then' or ';' or '\n'
+app/views/notifications/index.html.erb:42: syntax error, unexpected `end', expecting ')'
+app/views/notifications/index.html.erb:47: syntax error, unexpected `end', expecting ')'
+app/views/notifications/index.html.erb:36: syntax error, unexpected `end', expecting `then' or ';' or '\n'
+app/views/notifications/index.html.erb:42: syntax error, unexpected `end', expecting ')'
+app/views/notifications/index.html.erb:47: syntax error, unexpected `end', expecting ')'
+app/views/notifications/index.html.erb:36: syntax error, unexpected `end', expecting `then' or ';' or '\n'
+app/views/notifications/index.html.erb:42: syntax error, unexpected `end', expecting ')'
+app/views/notifications/index.html.erb:47: syntax error, unexpected `end', expecting ')'
+app/views/notifications/index.html.erb:36: syntax error, unexpected `end', expecting `then' or ';' or '\n'
+app/views/notifications/index.html.erb:42: syntax error, unexpected `end', expecting ')'
+app/views/notifications/index.html.erb:47: syntax error, unexpected `end', expecting ')'
+Started GET "/notifications" for ::1 at 2022-05-24 11:02:22 +0200
+Processing by NotificationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/index.html.erb within layouts/application
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."email" = $1[0m  [["email", "henk@test.com"]]
+  ↳ app/views/notifications/index.html.erb:13
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 2.4ms | Allocations: 886)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 1.9ms | Allocations: 672)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 1.5ms | Allocations: 598)
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notifications/index.html.erb:32
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 1.9ms | Allocations: 597)
+  Rendered notifications/index.html.erb within layouts/application (Duration: 18.1ms | Allocations: 5198)
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 8742)
+Completed 200 OK in 33ms (Views: 25.0ms | ActiveRecord: 1.5ms | Allocations: 11238)
+
+
+Started GET "/notifications" for ::1 at 2022-05-24 11:03:02 +0200
+Processing by NotificationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/index.html.erb within layouts/application
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."email" = $1[0m  [["email", "henk@test.com"]]
+  ↳ app/views/notifications/index.html.erb:13
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 3.0ms | Allocations: 968)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 1.9ms | Allocations: 674)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 1.6ms | Allocations: 600)
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notifications/index.html.erb:32
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 1.8ms | Allocations: 599)
+  Rendered notifications/index.html.erb within layouts/application (Duration: 15.5ms | Allocations: 5275)
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 8786)
+Completed 200 OK in 30ms (Views: 22.9ms | ActiveRecord: 1.4ms | Allocations: 11184)
+
+
+Started GET "/notifications" for ::1 at 2022-05-24 11:06:15 +0200
+Processing by NotificationsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/index.html.erb within layouts/application
+  [1m[36mNotification Load (1.9ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."email" = $1[0m  [["email", "henk@test.com"]]
+  ↳ app/views/notifications/index.html.erb:13
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 6.5ms | Allocations: 966)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 6.1ms | Allocations: 674)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 4.0ms | Allocations: 600)
+  [1m[36mNotification Load (0.6ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notifications/index.html.erb:32
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 3.1ms | Allocations: 599)
+  Rendered notifications/index.html.erb within layouts/application (Duration: 42.5ms | Allocations: 5273)
+  Rendered layout layouts/application.html.erb (Duration: 52.2ms | Allocations: 8784)
+Completed 200 OK in 73ms (Views: 54.5ms | ActiveRecord: 4.0ms | Allocations: 11191)
+
+
+Started GET "/notifications/1" for ::1 at 2022-05-24 11:06:17 +0200
+Processing by NotificationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNotification Load (0.5ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notifications_controller.rb:67:in `set_notification'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/show.html.erb within layouts/application
+  Rendered notifications/show.html.erb within layouts/application (Duration: 35.2ms | Allocations: 15599)
+  Rendered layout layouts/application.html.erb (Duration: 35.8ms | Allocations: 15697)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 0.9ms | Allocations: 18575)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `notification' for #<ActionView::Base:0x00000000014280>
+
+'.freeze; if !notification.seen && notification.email==current_user.email 
+              ^^^^^^^^^^^^
+Did you mean?  @notification):
+    1: <%= turbo_stream_from @notification %>
+    2: 
+    3: <% if !notification.seen && notification.email==current_user.email %>
+    4:   <% notification.seen = true %>
+    5: <% end %>
+    6: 
+  
+app/views/notifications/show.html.erb:3
+Started GET "/notifications" for ::1 at 2022-05-24 11:06:30 +0200
+Processing by NotificationsController#index as HTML
+  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/index.html.erb within layouts/application
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."email" = $1[0m  [["email", "henk@test.com"]]
+  ↳ app/views/notifications/index.html.erb:13
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 3.3ms | Allocations: 966)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 1.8ms | Allocations: 674)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 1.0ms | Allocations: 600)
+  [1m[36mNotification Load (0.2ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notifications/index.html.erb:32
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 1.1ms | Allocations: 599)
+  Rendered notifications/index.html.erb within layouts/application (Duration: 14.2ms | Allocations: 5276)
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 8820)
+Completed 200 OK in 42ms (Views: 23.4ms | ActiveRecord: 6.7ms | Allocations: 11307)
+
+
+Started GET "/notifications/1" for ::1 at 2022-05-24 11:06:31 +0200
+Processing by NotificationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNotification Load (0.5ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notifications_controller.rb:67:in `set_notification'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/show.html.erb within layouts/application
+  Rendered notifications/show.html.erb within layouts/application (Duration: 15.3ms | Allocations: 5508)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 5597)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.7ms | Allocations: 7902)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `notification' for #<ActionView::Base:0x00000000014640>
+
+'.freeze; if !@notification.seen && notification.email==current_user.email 
+                                    ^^^^^^^^^^^^
+Did you mean?  @notification):
+    1: <%= turbo_stream_from @notification %>
+    2: 
+    3: <% if !@notification.seen && notification.email==current_user.email %>
+    4:   <% @notification.seen = true %>
+    5: <% end %>
+    6: 
+  
+app/views/notifications/show.html.erb:3
+Started GET "/notifications" for ::1 at 2022-05-24 11:06:39 +0200
+Processing by NotificationsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/index.html.erb within layouts/application
+  [1m[36mNotification Load (0.4ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."email" = $1[0m  [["email", "henk@test.com"]]
+  ↳ app/views/notifications/index.html.erb:13
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 9.8ms | Allocations: 672)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 3.1ms | Allocations: 674)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 3.1ms | Allocations: 599)
+  [1m[36mNotification Load (0.5ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notifications/index.html.erb:32
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 3.0ms | Allocations: 599)
+  Rendered notifications/index.html.erb within layouts/application (Duration: 38.8ms | Allocations: 4268)
+  Rendered layout layouts/application.html.erb (Duration: 46.9ms | Allocations: 7287)
+Completed 200 OK in 59ms (Views: 44.7ms | ActiveRecord: 3.8ms | Allocations: 8990)
+
+
+Started GET "/notifications/1" for ::1 at 2022-05-24 11:06:41 +0200
+Processing by NotificationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notifications_controller.rb:67:in `set_notification'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/show.html.erb within layouts/application
+  Rendered notifications/show.html.erb within layouts/application (Duration: 11.6ms | Allocations: 5175)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 5263)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.4ms | Allocations: 7357)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `notification' for #<ActionView::Base:0x00000000014938>
+
+'.freeze; if !@notification.seen && notification.email==current_user.email 
+                                    ^^^^^^^^^^^^
+Did you mean?  @notification):
+    1: <%= turbo_stream_from @notification %>
+    2: 
+    3: <% if !@notification.seen && notification.email==current_user.email %>
+    4:   <% @notification.seen = true %>
+    5: <% end %>
+    6: 
+  
+app/views/notifications/show.html.erb:3
+Started GET "/notifications" for ::1 at 2022-05-24 11:06:45 +0200
+Processing by NotificationsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/index.html.erb within layouts/application
+  [1m[36mNotification Load (0.2ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."email" = $1[0m  [["email", "henk@test.com"]]
+  ↳ app/views/notifications/index.html.erb:13
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 2.6ms | Allocations: 966)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 2.7ms | Allocations: 674)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 7.8ms | Allocations: 600)
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notifications/index.html.erb:32
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 2.1ms | Allocations: 599)
+  Rendered notifications/index.html.erb within layouts/application (Duration: 23.9ms | Allocations: 5273)
+  Rendered layout layouts/application.html.erb (Duration: 31.7ms | Allocations: 8817)
+Completed 200 OK in 41ms (Views: 33.9ms | ActiveRecord: 1.2ms | Allocations: 11108)
+
+
+Started GET "/notifications/1" for ::1 at 2022-05-24 11:06:47 +0200
+Processing by NotificationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNotification Load (0.4ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notifications_controller.rb:67:in `set_notification'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 2.8ms | Allocations: 674)
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Notification"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/notifications/show.html.erb:13
+  Rendered /home/maxl/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 1.0ms | Allocations: 620)
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."notification_id" = $1[0m  [["notification_id", 1]]
+  ↳ app/views/notifications/_comments.html.erb:4
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 30)
+  Rendered comments/_new.html.erb (Duration: 6.1ms | Allocations: 2548)
+  Rendered notifications/_comments.html.erb (Duration: 18.9ms | Allocations: 6874)
+  Rendered notifications/show.html.erb within layouts/application (Duration: 49.1ms | Allocations: 19929)
+  Rendered layout layouts/application.html.erb (Duration: 54.0ms | Allocations: 23053)
+Completed 200 OK in 66ms (Views: 50.0ms | ActiveRecord: 5.8ms | Allocations: 25379)
+
+
+Started GET "/cable" for ::1 at 2022-05-24 11:06:47 +0200
+Started GET "/cable/" [WebSocket] for ::1 at 2022-05-24 11:06:47 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMQ
+Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_name":"IloybGtPaTh2Ym05MGFXWnBZMkYwYVc5dUxXTmxiblJsY2k5T2IzUnBabWxqWVhScGIyNHZNUSI=--cbdeeeee4c993522e3cf79f8a80089f33d0a34556e9e12173b608ac0b52f5f12"}
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMQ
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMQ
+Started GET "/notifications/1" for ::1 at 2022-05-24 11:06:51 +0200
+Processing by NotificationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNotification Load (0.5ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notifications_controller.rb:67:in `set_notification'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 3.2ms | Allocations: 715)
+  [1m[36mActionText::RichText Load (0.5ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Notification"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/notifications/show.html.erb:13
+  Rendered /home/maxl/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.8ms | Allocations: 304)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."notification_id" = $1[0m  [["notification_id", 1]]
+  ↳ app/views/notifications/_comments.html.erb:4
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 16)
+  Rendered comments/_new.html.erb (Duration: 1.7ms | Allocations: 554)
+  Rendered notifications/_comments.html.erb (Duration: 6.1ms | Allocations: 1437)
+  Rendered notifications/show.html.erb within layouts/application (Duration: 18.7ms | Allocations: 4408)
+  Rendered layout layouts/application.html.erb (Duration: 22.8ms | Allocations: 7483)
+Completed 200 OK in 33ms (Views: 22.5ms | ActiveRecord: 2.0ms | Allocations: 9859)
+
+
+Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_name":"IloybGtPaTh2Ym05MGFXWnBZMkYwYVc5dUxXTmxiblJsY2k5T2IzUnBabWxqWVhScGIyNHZNUSI=--cbdeeeee4c993522e3cf79f8a80089f33d0a34556e9e12173b608ac0b52f5f12"}
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMQ
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMQ
+Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_name":"IloybGtPaTh2Ym05MGFXWnBZMkYwYVc5dUxXTmxiblJsY2k5T2IzUnBabWxqWVhScGIyNHZNUSI=--cbdeeeee4c993522e3cf79f8a80089f33d0a34556e9e12173b608ac0b52f5f12"}
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMQ
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMQ
+Started GET "/notifications/1" for ::1 at 2022-05-24 11:08:11 +0200
+Processing by NotificationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notifications_controller.rb:67:in `set_notification'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/show.html.erb within layouts/application
+  [1m[36mNotification Load (0.4ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications"[0m
+  ↳ app/views/notifications/show.html.erb:4
+  Rendered notifications/show.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2389)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2483)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.0ms | Allocations: 5211)
+
+
+  
+ActionView::Template::Error (When assigning attributes, you must pass a hash as an argument, TrueClass passed.):
+    1: <%= turbo_stream_from @notification %>
+    2: 
+    3: <% if !@notification.seen && @notification.email==current_user.email %>
+    4:   <% Notification.update(@notification.seen = true) %>
+    5: <% end %>
+    6: 
+    7: <p style="color: green"><%= notice %></p>
+  
+app/views/notifications/show.html.erb:4
+Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_name":"IloybGtPaTh2Ym05MGFXWnBZMkYwYVc5dUxXTmxiblJsY2k5T2IzUnBabWxqWVhScGIyNHZNUSI=--cbdeeeee4c993522e3cf79f8a80089f33d0a34556e9e12173b608ac0b52f5f12"}
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMQ
+Started GET "/notifications/1" for ::1 at 2022-05-24 11:09:49 +0200
+Processing by NotificationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNotification Load (0.4ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notifications_controller.rb:67:in `set_notification'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/show.html.erb within layouts/application
+  Rendered notifications/show.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1572)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 1666)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.9ms | Allocations: 4516)
+
+
+  
+ActionView::Template::Error (You are passing an instance of ActiveRecord::Base to `find`. Please pass the id of the object by calling `.id`.):
+    1: <%= turbo_stream_from @notification %>
+    2: 
+    3: <% if !@notification.seen && @notification.email==current_user.email %>
+    4:   <% new_Notification = Notification.find(@notification) %>
+    5:   <% new_Notification.seen = true %>
+    6:   <% new_Notification.save %>
+    7: <% end %>
+  
+app/views/notifications/show.html.erb:4
+Finished "/cable/" [WebSocket] for ::1 at 2022-05-24 11:09:49 +0200
+Started GET "/notifications" for ::1 at 2022-05-24 11:10:00 +0200
+Processing by NotificationsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/index.html.erb within layouts/application
+  [1m[36mNotification Load (0.6ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."email" = $1[0m  [["email", "henk@test.com"]]
+  ↳ app/views/notifications/index.html.erb:13
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 9.7ms | Allocations: 966)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 6.0ms | Allocations: 675)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 5.3ms | Allocations: 600)
+  [1m[36mNotification Load (0.6ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notifications/index.html.erb:32
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 3.6ms | Allocations: 599)
+  Rendered notifications/index.html.erb within layouts/application (Duration: 43.8ms | Allocations: 5274)
+  Rendered layout layouts/application.html.erb (Duration: 57.1ms | Allocations: 8818)
+Completed 200 OK in 75ms (Views: 59.8ms | ActiveRecord: 3.4ms | Allocations: 11321)
+
+
+Started GET "/notifications/1" for ::1 at 2022-05-24 11:10:01 +0200
+Processing by NotificationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notifications_controller.rb:67:in `set_notification'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/show.html.erb within layouts/application
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/show.html.erb:4
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/views/notifications/show.html.erb:6
+  [1m[36mActionText::RichText Load (0.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Notification"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/notifications/show.html.erb:6
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/show.html.erb:6
+  [1m[36mNotification Update (0.6ms)[0m  [1m[33mUPDATE "notifications" SET "updated_at" = $1, "seen" = $2 WHERE "notifications"."id" = $3[0m  [["updated_at", "2022-05-24 09:10:01.764207"], ["seen", true], ["id", 1]]
+  ↳ app/views/notifications/show.html.erb:6
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/views/notifications/show.html.erb:6
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 2.2ms | Allocations: 719)
+  [1m[36mActionText::RichText Load (0.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Notification"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/notifications/show.html.erb:15
+  Rendered /home/maxl/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 1.6ms | Allocations: 553)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."notification_id" = $1[0m  [["notification_id", 1]]
+  ↳ app/views/notifications/_comments.html.erb:4
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 16)
+  Rendered comments/_new.html.erb (Duration: 2.3ms | Allocations: 754)
+  Rendered notifications/_comments.html.erb (Duration: 5.9ms | Allocations: 1821)
+  Rendered notifications/show.html.erb within layouts/application (Duration: 64.2ms | Allocations: 26000)
+  Rendered layout layouts/application.html.erb (Duration: 73.4ms | Allocations: 29080)
+Completed 200 OK in 81ms (Views: 64.0ms | ActiveRecord: 10.6ms | Allocations: 31387)
+
+
+Started GET "/cable" for ::1 at 2022-05-24 11:10:01 +0200
+Started GET "/cable/" [WebSocket] for ::1 at 2022-05-24 11:10:01 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMQ
+Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_name":"IloybGtPaTh2Ym05MGFXWnBZMkYwYVc5dUxXTmxiblJsY2k5T2IzUnBabWxqWVhScGIyNHZNUSI=--cbdeeeee4c993522e3cf79f8a80089f33d0a34556e9e12173b608ac0b52f5f12"}
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMQ
+Started GET "/notifications" for ::1 at 2022-05-24 11:10:06 +0200
+Processing by NotificationsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/index.html.erb within layouts/application
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."email" = $1[0m  [["email", "henk@test.com"]]
+  ↳ app/views/notifications/index.html.erb:13
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 4.3ms | Allocations: 672)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 1.3ms | Allocations: 601)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 2.2ms | Allocations: 674)
+  [1m[36mNotification Load (0.2ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notifications/index.html.erb:32
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 1.9ms | Allocations: 599)
+  Rendered notifications/index.html.erb within layouts/application (Duration: 20.0ms | Allocations: 4271)
+  Rendered layout layouts/application.html.erb (Duration: 24.9ms | Allocations: 7259)
+Completed 200 OK in 32ms (Views: 24.1ms | ActiveRecord: 1.9ms | Allocations: 9035)
+
+
+Started GET "/notifications/2" for ::1 at 2022-05-24 11:10:11 +0200
+Processing by NotificationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mNotification Load (0.4ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/notifications_controller.rb:67:in `set_notification'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/show.html.erb within layouts/application
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/show.html.erb:4
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/views/notifications/show.html.erb:6
+  [1m[36mActionText::RichText Load (0.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Notification"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/notifications/show.html.erb:6
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/show.html.erb:6
+  [1m[36mNotification Update (0.3ms)[0m  [1m[33mUPDATE "notifications" SET "updated_at" = $1, "seen" = $2 WHERE "notifications"."id" = $3[0m  [["updated_at", "2022-05-24 09:10:11.673975"], ["seen", true], ["id", 2]]
+  ↳ app/views/notifications/show.html.erb:6
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/views/notifications/show.html.erb:6
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 1.7ms | Allocations: 669)
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Notification"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/notifications/show.html.erb:15
+  Rendered /home/maxl/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 269)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."notification_id" = $1[0m  [["notification_id", 2]]
+  ↳ app/views/notifications/_comments.html.erb:4
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 12)
+  Rendered comments/_new.html.erb (Duration: 0.8ms | Allocations: 480)
+  Rendered notifications/_comments.html.erb (Duration: 2.9ms | Allocations: 1352)
+  Rendered notifications/show.html.erb within layouts/application (Duration: 36.7ms | Allocations: 9128)
+  Rendered layout layouts/application.html.erb (Duration: 41.0ms | Allocations: 12106)
+Completed 200 OK in 51ms (Views: 32.4ms | ActiveRecord: 10.3ms | Allocations: 14225)
+
+
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMg
+Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_name":"IloybGtPaTh2Ym05MGFXWnBZMkYwYVc5dUxXTmxiblJsY2k5T2IzUnBabWxqWVhScGIyNHZNZyI=--c786ed139303e5e8e47f9b5aaa0dd17042f8f1f47a1c6402da40b4f547695c67"}
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMg
+Started GET "/notifications" for ::1 at 2022-05-24 11:10:12 +0200
+Processing by NotificationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/index.html.erb within layouts/application
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."email" = $1[0m  [["email", "henk@test.com"]]
+  ↳ app/views/notifications/index.html.erb:13
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 2.4ms | Allocations: 672)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 3.1ms | Allocations: 674)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 1.9ms | Allocations: 599)
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notifications/index.html.erb:32
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 3.1ms | Allocations: 599)
+  Rendered notifications/index.html.erb within layouts/application (Duration: 18.3ms | Allocations: 4268)
+  Rendered layout layouts/application.html.erb (Duration: 28.2ms | Allocations: 7254)
+Completed 200 OK in 42ms (Views: 28.1ms | ActiveRecord: 1.5ms | Allocations: 8979)
+
+
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMg
+Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_name":"IloybGtPaTh2Ym05MGFXWnBZMkYwYVc5dUxXTmxiblJsY2k5T2IzUnBabWxqWVhScGIyNHZNZyI=--c786ed139303e5e8e47f9b5aaa0dd17042f8f1f47a1c6402da40b4f547695c67"}
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMg
+Started GET "/notifications" for ::1 at 2022-05-24 11:10:43 +0200
+Processing by NotificationsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/index.html.erb within layouts/application
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."email" = $1[0m  [["email", "henk@test.com"]]
+  ↳ app/views/notifications/index.html.erb:13
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 6.2ms | Allocations: 966)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 2.2ms | Allocations: 674)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 1.8ms | Allocations: 600)
+  [1m[36mNotification Load (0.2ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notifications/index.html.erb:32
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 2.1ms | Allocations: 599)
+  Rendered notifications/index.html.erb within layouts/application (Duration: 20.3ms | Allocations: 5273)
+  Rendered layout layouts/application.html.erb (Duration: 26.2ms | Allocations: 8784)
+Completed 200 OK in 37ms (Views: 28.0ms | ActiveRecord: 1.8ms | Allocations: 11070)
+
+
+Started GET "/notifications/3" for ::1 at 2022-05-24 11:10:45 +0200
+Processing by NotificationsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notifications_controller.rb:67:in `set_notification'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 3.9ms | Allocations: 669)
+  [1m[36mActionText::RichText Load (0.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Notification"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/notifications/show.html.erb:16
+  Rendered /home/maxl/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 1.6ms | Allocations: 541)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."notification_id" = $1[0m  [["notification_id", 3]]
+  ↳ app/views/notifications/_comments.html.erb:4
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 16)
+  Rendered comments/_new.html.erb (Duration: 1.3ms | Allocations: 719)
+  Rendered notifications/_comments.html.erb (Duration: 6.0ms | Allocations: 1787)
+  Rendered notifications/show.html.erb within layouts/application (Duration: 22.5ms | Allocations: 5447)
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 8468)
+Completed 200 OK in 46ms (Views: 26.9ms | ActiveRecord: 1.5ms | Allocations: 10764)
+
+
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMw
+Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_name":"IloybGtPaTh2Ym05MGFXWnBZMkYwYVc5dUxXTmxiblJsY2k5T2IzUnBabWxqWVhScGIyNHZNdyI=--9f73755a800bf57821a3d93eff5bdb4ebfb1188f0ea5aca2f6467f932e535be5"}
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMw
+Started GET "/notifications" for ::1 at 2022-05-24 11:10:46 +0200
+Processing by NotificationsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/index.html.erb within layouts/application
+  [1m[36mNotification Load (0.2ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."email" = $1[0m  [["email", "henk@test.com"]]
+  ↳ app/views/notifications/index.html.erb:13
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 6.6ms | Allocations: 672)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 3.1ms | Allocations: 674)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 2.2ms | Allocations: 599)
+  [1m[36mNotification Load (0.6ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notifications/index.html.erb:32
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 1.6ms | Allocations: 599)
+  Rendered notifications/index.html.erb within layouts/application (Duration: 21.6ms | Allocations: 4268)
+  Rendered layout layouts/application.html.erb (Duration: 28.0ms | Allocations: 7254)
+Completed 200 OK in 36ms (Views: 26.9ms | ActiveRecord: 2.4ms | Allocations: 8954)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (26.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "NotificationCenter_development"[0m
+  [1m[35m (38.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "NotificationCenter_test"[0m
+  [1m[35m (83.2ms)[0m  [1m[35mCREATE DATABASE "NotificationCenter_development" ENCODING = 'unicode'[0m
+  [1m[35m (90.2ms)[0m  [1m[35mCREATE DATABASE "NotificationCenter_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "action_text_rich_texts" CASCADE[0m
+  [1m[35m (10.6ms)[0m  [1m[35mCREATE TABLE "action_text_rich_texts" ("id" bigserial primary key, "name" character varying NOT NULL, "body" text, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_action_text_rich_texts_uniqueness" ON "action_text_rich_texts" ("record_type", "record_id", "name")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  [1m[35m (11.8ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  [1m[35m (12.6ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "service_name" character varying NOT NULL, "byte_size" bigint NOT NULL, "checksum" character varying, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_variant_records" CASCADE[0m
+  [1m[35m (12.1ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" bigserial primary key, "blob_id" bigint NOT NULL, "variation_digest" character varying NOT NULL)[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments" CASCADE[0m
+  [1m[35m (12.8ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "notification_id" bigint NOT NULL, "content" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE INDEX "index_comments_on_notification_id" ON "comments" ("notification_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "notifications" CASCADE[0m
+  [1m[35m (13.2ms)[0m  [1m[35mCREATE TABLE "notifications" ("id" bigserial primary key, "title" character varying, "description" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "user_id" bigint NOT NULL, "email" character varying, "seen" boolean DEFAULT FALSE)[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE INDEX "index_notifications_on_user_id" ON "notifications" ("user_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (12.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (4.8ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (2.9ms)[0m  [1m[35mALTER TABLE "active_storage_variant_records" ADD CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (3.2ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_4890bb7092"
+FOREIGN KEY ("notification_id")
+  REFERENCES "notifications" ("id")
+[0m
+  [1m[35m (3.4ms)[0m  [1m[35mALTER TABLE "notifications" ADD CONSTRAINT "fk_rails_b080fb4855"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220524081448)[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20220523121025),
+(20220523123351),
+(20220523125038),
+(20220523125039),
+(20220523144012),
+(20220523152057);
+
+[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-05-24 09:10:59.452051"], ["updated_at", "2022-05-24 09:10:59.452051"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "d80d66069da991a80dd2df30676243f43aa4e315"], ["created_at", "2022-05-24 09:10:59.473338"], ["updated_at", "2022-05-24 09:10:59.473338"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "action_text_rich_texts" CASCADE[0m
+  [1m[35m (13.2ms)[0m  [1m[35mCREATE TABLE "action_text_rich_texts" ("id" bigserial primary key, "name" character varying NOT NULL, "body" text, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_action_text_rich_texts_uniqueness" ON "action_text_rich_texts" ("record_type", "record_id", "name")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  [1m[35m (12.3ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "service_name" character varying NOT NULL, "byte_size" bigint NOT NULL, "checksum" character varying, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_variant_records" CASCADE[0m
+  [1m[35m (12.4ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" bigserial primary key, "blob_id" bigint NOT NULL, "variation_digest" character varying NOT NULL)[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments" CASCADE[0m
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "notification_id" bigint NOT NULL, "content" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE INDEX "index_comments_on_notification_id" ON "comments" ("notification_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "notifications" CASCADE[0m
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE TABLE "notifications" ("id" bigserial primary key, "title" character varying, "description" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "user_id" bigint NOT NULL, "email" character varying, "seen" boolean DEFAULT FALSE)[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE INDEX "index_notifications_on_user_id" ON "notifications" ("user_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (11.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (4.6ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (3.1ms)[0m  [1m[35mALTER TABLE "active_storage_variant_records" ADD CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (3.1ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_4890bb7092"
+FOREIGN KEY ("notification_id")
+  REFERENCES "notifications" ("id")
+[0m
+  [1m[35m (6.6ms)[0m  [1m[35mALTER TABLE "notifications" ADD CONSTRAINT "fk_rails_b080fb4855"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220524081448)[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20220523121025),
+(20220523123351),
+(20220523125038),
+(20220523125039),
+(20220523144012),
+(20220523152057);
+
+[0m
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-05-24 09:10:59.756763"], ["updated_at", "2022-05-24 09:10:59.756763"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.8ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2022-05-24 09:10:59.773655"], ["key", "environment"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "d80d66069da991a80dd2df30676243f43aa4e315"], ["created_at", "2022-05-24 09:10:59.787188"], ["updated_at", "2022-05-24 09:10:59.787188"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "henk@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "henk@test.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-05-24 09:11:00.045397"], ["updated_at", "2022-05-24 09:11:00.045397"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "piet@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "piet@test.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-05-24 09:11:00.247647"], ["updated_at", "2022-05-24 09:11:00.247647"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "john@test.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-05-24 09:11:00.450893"], ["updated_at", "2022-05-24 09:11:00.450893"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kyle@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "kyle@test.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-05-24 09:11:00.657487"], ["updated_at", "2022-05-24 09:11:00.657487"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "siri@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "siri@test.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-05-24 09:11:00.861939"], ["updated_at", "2022-05-24 09:11:00.861939"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sara@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "sara@test.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-05-24 09:11:01.067271"], ["updated_at", "2022-05-24 09:11:01.067271"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "iris@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "iris@test.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-05-24 09:11:01.275962"], ["updated_at", "2022-05-24 09:11:01.275962"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Create (0.5ms)[0m  [1m[32mINSERT INTO "notifications" ("title", "description", "created_at", "updated_at", "user_id", "email", "seen") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "This is message 1"], ["description", nil], ["created_at", "2022-05-24 09:11:01.338793"], ["updated_at", "2022-05-24 09:11:01.338793"], ["user_id", 1], ["email", "henk@test.com"], ["seen", false]]
+  [1m[36mActionText::RichText Create (0.4ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "description"], ["body", "This is the discription of message 1"], ["record_type", "Notification"], ["record_id", 1], ["created_at", "2022-05-24 09:11:01.354649"], ["updated_at", "2022-05-24 09:11:01.354649"]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 1], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  [1m[36mNotification Update (0.3ms)[0m  [1m[33mUPDATE "notifications" SET "updated_at" = $1 WHERE "notifications"."id" = $2[0m  [["updated_at", "2022-05-24 09:11:01.356912"], ["id", 1]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mNotification Create (0.4ms)[0m  [1m[32mINSERT INTO "notifications" ("title", "description", "created_at", "updated_at", "user_id", "email", "seen") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "This is message 2"], ["description", nil], ["created_at", "2022-05-24 09:11:01.372721"], ["updated_at", "2022-05-24 09:11:01.372721"], ["user_id", 2], ["email", "henk@test.com"], ["seen", false]]
+  [1m[36mActionText::RichText Create (0.4ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "description"], ["body", "This is the discription of message 2"], ["record_type", "Notification"], ["record_id", 2], ["created_at", "2022-05-24 09:11:01.375108"], ["updated_at", "2022-05-24 09:11:01.375108"]]
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 2], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  [1m[36mNotification Update (0.4ms)[0m  [1m[33mUPDATE "notifications" SET "updated_at" = $1 WHERE "notifications"."id" = $2[0m  [["updated_at", "2022-05-24 09:11:01.377496"], ["id", 2]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mNotification Create (0.2ms)[0m  [1m[32mINSERT INTO "notifications" ("title", "description", "created_at", "updated_at", "user_id", "email", "seen") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "This is message 3"], ["description", nil], ["created_at", "2022-05-24 09:11:01.387506"], ["updated_at", "2022-05-24 09:11:01.387506"], ["user_id", 2], ["email", "henk@test.com"], ["seen", true]]
+  [1m[36mActionText::RichText Create (0.2ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "description"], ["body", "This is the discription of message 3"], ["record_type", "Notification"], ["record_id", 3], ["created_at", "2022-05-24 09:11:01.389136"], ["updated_at", "2022-05-24 09:11:01.389136"]]
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 3], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  [1m[36mNotification Update (0.3ms)[0m  [1m[33mUPDATE "notifications" SET "updated_at" = $1 WHERE "notifications"."id" = $2[0m  [["updated_at", "2022-05-24 09:11:01.390665"], ["id", 3]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/notifications/3" for ::1 at 2022-05-24 11:11:07 +0200
+Started GET "/cable" for ::1 at 2022-05-24 11:11:07 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/cable/" [WebSocket] for ::1 at 2022-05-24 11:11:07 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMw
+Processing by NotificationsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mNotification Load (0.4ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notifications_controller.rb:67:in `set_notification'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 41ms (ActiveRecord: 7.8ms | Allocations: 17296)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-05-24 11:11:07 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.9ms | Allocations: 742)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 8.3ms | Allocations: 3856)
+  Rendered layout layouts/application.html.erb (Duration: 79.9ms | Allocations: 41609)
+Completed 200 OK in 88ms (Views: 85.1ms | ActiveRecord: 0.0ms | Allocations: 44728)
+
+
+Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_name":"IloybGtPaTh2Ym05MGFXWnBZMkYwYVc5dUxXTmxiblJsY2k5T2IzUnBabWxqWVhScGIyNHZNdyI=--9f73755a800bf57821a3d93eff5bdb4ebfb1188f0ea5aca2f6467f932e535be5"}
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMw
+Started POST "/users/sign_in" for ::1 at 2022-05-24 11:11:08 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"henk@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "henk@test.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/notifications/3
+Completed 302 Found in 223ms (ActiveRecord: 0.4ms | Allocations: 4426)
+
+
+Started GET "/notifications/3" for ::1 at 2022-05-24 11:11:08 +0200
+Processing by NotificationsController#show as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notifications_controller.rb:67:in `set_notification'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 3.7ms | Allocations: 2109)
+  [1m[36mActionText::RichText Load (0.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Notification"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/notifications/show.html.erb:16
+  Rendered /home/maxl/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 1.5ms | Allocations: 660)
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."notification_id" = $1[0m  [["notification_id", 3]]
+  ↳ app/views/notifications/_comments.html.erb:4
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 31)
+  Rendered comments/_new.html.erb (Duration: 5.9ms | Allocations: 2584)
+  Rendered notifications/_comments.html.erb (Duration: 16.6ms | Allocations: 6909)
+  Rendered notifications/show.html.erb within layouts/application (Duration: 48.9ms | Allocations: 21832)
+  Rendered layout layouts/application.html.erb (Duration: 52.5ms | Allocations: 25020)
+Completed 200 OK in 58ms (Views: 46.3ms | ActiveRecord: 8.1ms | Allocations: 27935)
+
+
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMw
+Started GET "/notifications" for ::1 at 2022-05-24 11:11:10 +0200
+Processing by NotificationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/index.html.erb within layouts/application
+  [1m[36mNotification Load (0.4ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."email" = $1[0m  [["email", "henk@test.com"]]
+  ↳ app/views/notifications/index.html.erb:13
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 2.8ms | Allocations: 708)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 2.8ms | Allocations: 675)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 1.2ms | Allocations: 608)
+  [1m[36mNotification Load (0.2ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notifications/index.html.erb:32
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 1.1ms | Allocations: 599)
+  Rendered notifications/index.html.erb within layouts/application (Duration: 15.1ms | Allocations: 4800)
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 7789)
+Completed 200 OK in 24ms (Views: 17.5ms | ActiveRecord: 1.8ms | Allocations: 9830)
+
+
+Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_name":"IloybGtPaTh2Ym05MGFXWnBZMkYwYVc5dUxXTmxiblJsY2k5T2IzUnBabWxqWVhScGIyNHZNdyI=--9f73755a800bf57821a3d93eff5bdb4ebfb1188f0ea5aca2f6467f932e535be5"}
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMw
+Started GET "/notifications/1" for ::1 at 2022-05-24 11:11:14 +0200
+Processing by NotificationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notifications_controller.rb:67:in `set_notification'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/show.html.erb within layouts/application
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/show.html.erb:4
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/views/notifications/show.html.erb:7
+  [1m[36mActionText::RichText Load (0.6ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Notification"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/notifications/show.html.erb:7
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/show.html.erb:7
+  [1m[36mNotification Update (1.0ms)[0m  [1m[33mUPDATE "notifications" SET "updated_at" = $1, "seen" = $2 WHERE "notifications"."id" = $3[0m  [["updated_at", "2022-05-24 09:11:14.350544"], ["seen", true], ["id", 1]]
+  ↳ app/views/notifications/show.html.erb:7
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/views/notifications/show.html.erb:7
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 8.5ms | Allocations: 720)
+  [1m[36mActionText::RichText Load (0.5ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Notification"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/notifications/show.html.erb:16
+  Rendered /home/maxl/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.7ms | Allocations: 287)
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."notification_id" = $1[0m  [["notification_id", 1]]
+  ↳ app/views/notifications/_comments.html.erb:4
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 16)
+  Rendered comments/_new.html.erb (Duration: 1.5ms | Allocations: 560)
+  Rendered notifications/_comments.html.erb (Duration: 4.3ms | Allocations: 1442)
+  Rendered notifications/show.html.erb within layouts/application (Duration: 56.1ms | Allocations: 12877)
+  Rendered layout layouts/application.html.erb (Duration: 66.8ms | Allocations: 15968)
+Completed 200 OK in 76ms (Views: 60.0ms | ActiveRecord: 8.2ms | Allocations: 18126)
+
+
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMQ
+Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_name":"IloybGtPaTh2Ym05MGFXWnBZMkYwYVc5dUxXTmxiblJsY2k5T2IzUnBabWxqWVhScGIyNHZNUSI=--cbdeeeee4c993522e3cf79f8a80089f33d0a34556e9e12173b608ac0b52f5f12"}
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMQ
+Started GET "/notifications" for ::1 at 2022-05-24 11:11:16 +0200
+Processing by NotificationsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/index.html.erb within layouts/application
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."email" = $1[0m  [["email", "henk@test.com"]]
+  ↳ app/views/notifications/index.html.erb:13
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 4.6ms | Allocations: 672)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 4.7ms | Allocations: 601)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 4.6ms | Allocations: 674)
+  [1m[36mNotification Load (0.2ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notifications/index.html.erb:32
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 1.3ms | Allocations: 599)
+  Rendered notifications/index.html.erb within layouts/application (Duration: 48.4ms | Allocations: 4271)
+  Rendered layout layouts/application.html.erb (Duration: 56.4ms | Allocations: 7272)
+Completed 200 OK in 75ms (Views: 56.1ms | ActiveRecord: 1.4ms | Allocations: 9077)
+
+
+Started GET "/notifications" for ::1 at 2022-05-24 11:13:48 +0200
+Processing by NotificationsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/index.html.erb within layouts/application
+  [1m[36mNotification Load (0.7ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."email" = $1[0m  [["email", "henk@test.com"]]
+  ↳ app/views/notifications/index.html.erb:13
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 8.9ms | Allocations: 967)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 2.8ms | Allocations: 600)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 5.2ms | Allocations: 674)
+  [1m[36mNotification Load (0.7ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notifications/index.html.erb:32
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 3.6ms | Allocations: 599)
+  Rendered notifications/index.html.erb within layouts/application (Duration: 38.1ms | Allocations: 5165)
+  Rendered layout layouts/application.html.erb (Duration: 50.8ms | Allocations: 8684)
+Completed 200 OK in 69ms (Views: 53.9ms | ActiveRecord: 3.4ms | Allocations: 11010)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2022-05-24 11:13:49 +0200
+Started GET "/notifications" for ::1 at 2022-05-24 11:13:54 +0200
+Processing by NotificationsController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/index.html.erb within layouts/application
+  Rendered notifications/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1488)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 1582)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.7ms | Allocations: 3975)
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    3: <%= link_to "New notification", new_notification_path %>
+    4: 
+    5: <h1>Inbox</h1>
+    6: <%= render @notification_table%>
+    7: 
+    8: <div id="notifications_received">
+    9:   <table>
+  
+app/views/notifications/index.html.erb:6
+Started GET "/notifications" for ::1 at 2022-05-24 11:14:56 +0200
+Processing by NotificationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/index.html.erb within layouts/application
+  [1m[36mNotification Load (0.2ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."email" = $1[0m  [["email", "henk@test.com"]]
+  ↳ app/views/notifications/index.html.erb:13
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 2.1ms | Allocations: 967)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 1.0ms | Allocations: 601)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 2.4ms | Allocations: 674)
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notifications/index.html.erb:32
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 1.6ms | Allocations: 599)
+  Rendered notifications/index.html.erb within layouts/application (Duration: 14.0ms | Allocations: 5137)
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 8681)
+Completed 200 OK in 29ms (Views: 21.6ms | ActiveRecord: 1.4ms | Allocations: 11169)
+
+
+Started GET "/notifications" for ::1 at 2022-05-24 11:15:22 +0200
+Processing by NotificationsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/index.html.erb within layouts/application
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."email" = $1[0m  [["email", "henk@test.com"]]
+  ↳ app/views/notifications/index.html.erb:13
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 3.6ms | Allocations: 1040)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 1.4ms | Allocations: 636)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 1.6ms | Allocations: 710)
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notifications/index.html.erb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 1.2ms | Allocations: 635)
+  Rendered notifications/index.html.erb within layouts/application (Duration: 14.0ms | Allocations: 5173)
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 8684)
+Completed 200 OK in 27ms (Views: 20.6ms | ActiveRecord: 1.6ms | Allocations: 11076)
+
+
+Started GET "/notifications/2" for ::1 at 2022-05-24 11:15:24 +0200
+Processing by NotificationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mNotification Load (0.6ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/notifications_controller.rb:67:in `set_notification'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/show.html.erb within layouts/application
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/show.html.erb:4
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/views/notifications/show.html.erb:7
+  [1m[36mActionText::RichText Load (0.6ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Notification"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/notifications/show.html.erb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/show.html.erb:7
+  [1m[36mNotification Update (0.3ms)[0m  [1m[33mUPDATE "notifications" SET "updated_at" = $1, "seen" = $2 WHERE "notifications"."id" = $3[0m  [["updated_at", "2022-05-24 09:15:24.472387"], ["seen", true], ["id", 2]]
+  ↳ app/views/notifications/show.html.erb:7
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/views/notifications/show.html.erb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 1.9ms | Allocations: 714)
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Notification"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/notifications/show.html.erb:16
+  Rendered /home/maxl/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 1.3ms | Allocations: 524)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."notification_id" = $1[0m  [["notification_id", 2]]
+  ↳ app/views/notifications/_comments.html.erb:4
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 16)
+  Rendered comments/_new.html.erb (Duration: 1.4ms | Allocations: 709)
+  Rendered notifications/_comments.html.erb (Duration: 3.6ms | Allocations: 1776)
+  Rendered notifications/show.html.erb within layouts/application (Duration: 35.4ms | Allocations: 10579)
+  Rendered layout layouts/application.html.erb (Duration: 38.8ms | Allocations: 13557)
+Completed 200 OK in 51ms (Views: 30.1ms | ActiveRecord: 10.4ms | Allocations: 15895)
+
+
+Started GET "/cable" for ::1 at 2022-05-24 11:15:24 +0200
+Started GET "/cable/" [WebSocket] for ::1 at 2022-05-24 11:15:24 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMg
+Started GET "/notifications/2" for ::1 at 2022-05-24 11:16:18 +0200
+Processing by NotificationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mNotification Load (0.2ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/notifications_controller.rb:67:in `set_notification'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 2.0ms | Allocations: 1041)
+  [1m[36mActionText::RichText Load (0.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Notification"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/notifications/show.html.erb:16
+  Rendered /home/maxl/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 1.1ms | Allocations: 541)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."notification_id" = $1[0m  [["notification_id", 2]]
+  ↳ app/views/notifications/_comments.html.erb:4
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 16)
+  Rendered comments/_new.html.erb (Duration: 1.3ms | Allocations: 764)
+  Rendered notifications/_comments.html.erb (Duration: 3.6ms | Allocations: 1832)
+  Rendered notifications/show.html.erb within layouts/application (Duration: 12.8ms | Allocations: 6132)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 9608)
+Completed 200 OK in 25ms (Views: 18.2ms | ActiveRecord: 1.1ms | Allocations: 12299)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2022-05-24 11:16:19 +0200
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMg
+Started GET "/cable" for ::1 at 2022-05-24 11:16:19 +0200
+Started GET "/cable/" [WebSocket] for ::1 at 2022-05-24 11:16:19 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMg
+Started GET "/notifications/2" for ::1 at 2022-05-24 11:19:03 +0200
+Processing by NotificationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mNotification Load (0.2ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/notifications_controller.rb:67:in `set_notification'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 6.6ms | Allocations: 1039)
+  [1m[36mActionText::RichText Load (0.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Notification"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/notifications/show.html.erb:26
+  Rendered /home/maxl/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 1.2ms | Allocations: 546)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."notification_id" = $1[0m  [["notification_id", 2]]
+  ↳ app/views/notifications/_comments.html.erb:4
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 16)
+  Rendered comments/_new.html.erb (Duration: 1.3ms | Allocations: 711)
+  Rendered notifications/_comments.html.erb (Duration: 3.4ms | Allocations: 1779)
+  Rendered notifications/show.html.erb within layouts/application (Duration: 16.9ms | Allocations: 6165)
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 9661)
+Completed 200 OK in 27ms (Views: 22.0ms | ActiveRecord: 1.1ms | Allocations: 12464)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2022-05-24 11:19:03 +0200
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMg
+Started GET "/cable" for ::1 at 2022-05-24 11:19:03 +0200
+Started GET "/cable/" [WebSocket] for ::1 at 2022-05-24 11:19:03 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMg
+Started GET "/notifications/2" for ::1 at 2022-05-24 11:20:40 +0200
+Processing by NotificationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mNotification Load (0.4ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/notifications_controller.rb:67:in `set_notification'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 2.6ms | Allocations: 1038)
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Notification"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/notifications/show.html.erb:28
+  Rendered /home/maxl/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 1.9ms | Allocations: 541)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."notification_id" = $1[0m  [["notification_id", 2]]
+  ↳ app/views/notifications/_comments.html.erb:4
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 16)
+  Rendered comments/_new.html.erb (Duration: 1.9ms | Allocations: 711)
+  Rendered notifications/_comments.html.erb (Duration: 6.0ms | Allocations: 1779)
+  Rendered notifications/show.html.erb within layouts/application (Duration: 20.4ms | Allocations: 6187)
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | Allocations: 9683)
+Completed 200 OK in 36ms (Views: 28.2ms | ActiveRecord: 1.3ms | Allocations: 12465)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2022-05-24 11:20:40 +0200
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMg
+Started GET "/cable" for ::1 at 2022-05-24 11:20:40 +0200
+Started GET "/cable/" [WebSocket] for ::1 at 2022-05-24 11:20:40 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMg
+Started GET "/notifications" for ::1 at 2022-05-24 11:20:43 +0200
+Processing by NotificationsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/index.html.erb within layouts/application
+  [1m[36mNotification Load (0.8ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."email" = $1[0m  [["email", "henk@test.com"]]
+  ↳ app/views/notifications/index.html.erb:13
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 4.3ms | Allocations: 672)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 4.5ms | Allocations: 674)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 4.2ms | Allocations: 600)
+  [1m[36mNotification Load (0.7ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notifications/index.html.erb:32
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 3.8ms | Allocations: 599)
+  Rendered notifications/index.html.erb within layouts/application (Duration: 33.3ms | Allocations: 4586)
+  Rendered layout layouts/application.html.erb (Duration: 42.8ms | Allocations: 7573)
+Completed 200 OK in 58ms (Views: 41.7ms | ActiveRecord: 3.0ms | Allocations: 9424)
+
+
+Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_name":"IloybGtPaTh2Ym05MGFXWnBZMkYwYVc5dUxXTmxiblJsY2k5T2IzUnBabWxqWVhScGIyNHZNZyI=--c786ed139303e5e8e47f9b5aaa0dd17042f8f1f47a1c6402da40b4f547695c67"}
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMg
+Started GET "/notifications/1" for ::1 at 2022-05-24 11:20:44 +0200
+Processing by NotificationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notifications_controller.rb:67:in `set_notification'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 4.7ms | Allocations: 669)
+  [1m[36mActionText::RichText Load (0.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Notification"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/notifications/show.html.erb:28
+  Rendered /home/maxl/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.7ms | Allocations: 269)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."notification_id" = $1[0m  [["notification_id", 1]]
+  ↳ app/views/notifications/_comments.html.erb:4
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 12)
+  Rendered comments/_new.html.erb (Duration: 1.2ms | Allocations: 471)
+  Rendered notifications/_comments.html.erb (Duration: 3.5ms | Allocations: 1343)
+  Rendered notifications/show.html.erb within layouts/application (Duration: 16.3ms | Allocations: 4075)
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 7054)
+Completed 200 OK in 28ms (Views: 20.6ms | ActiveRecord: 2.0ms | Allocations: 9206)
+
+
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMQ
+Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_name":"IloybGtPaTh2Ym05MGFXWnBZMkYwYVc5dUxXTmxiblJsY2k5T2IzUnBabWxqWVhScGIyNHZNUSI=--cbdeeeee4c993522e3cf79f8a80089f33d0a34556e9e12173b608ac0b52f5f12"}
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMQ
+Started GET "/notifications" for ::1 at 2022-05-24 11:20:47 +0200
+Processing by NotificationsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/index.html.erb within layouts/application
+  [1m[36mNotification Load (0.2ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."email" = $1[0m  [["email", "henk@test.com"]]
+  ↳ app/views/notifications/index.html.erb:13
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 2.1ms | Allocations: 672)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 5.2ms | Allocations: 674)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 2.0ms | Allocations: 599)
+  [1m[36mNotification Load (0.4ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notifications/index.html.erb:32
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 2.0ms | Allocations: 599)
+  Rendered notifications/index.html.erb within layouts/application (Duration: 20.1ms | Allocations: 4266)
+  Rendered layout layouts/application.html.erb (Duration: 23.7ms | Allocations: 7252)
+Completed 200 OK in 28ms (Views: 23.0ms | ActiveRecord: 1.6ms | Allocations: 8950)
+
+
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMg
+Started GET "/notifications/2" for ::1 at 2022-05-24 11:20:48 +0200
+Processing by NotificationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mNotification Load (0.2ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/notifications_controller.rb:67:in `set_notification'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/show.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 4.2ms | Allocations: 669)
+  [1m[36mActionText::RichText Load (0.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Notification"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/notifications/show.html.erb:28
+  Rendered /home/maxl/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.9ms | Allocations: 269)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."notification_id" = $1[0m  [["notification_id", 2]]
+  ↳ app/views/notifications/_comments.html.erb:4
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 12)
+  Rendered comments/_new.html.erb (Duration: 1.3ms | Allocations: 471)
+  Rendered notifications/_comments.html.erb (Duration: 4.8ms | Allocations: 1343)
+  Rendered notifications/show.html.erb within layouts/application (Duration: 18.1ms | Allocations: 4043)
+  Rendered layout layouts/application.html.erb (Duration: 22.6ms | Allocations: 7022)
+Completed 200 OK in 30ms (Views: 22.3ms | ActiveRecord: 2.1ms | Allocations: 9163)
+
+
+Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_name":"IloybGtPaTh2Ym05MGFXWnBZMkYwYVc5dUxXTmxiblJsY2k5T2IzUnBabWxqWVhScGIyNHZNZyI=--c786ed139303e5e8e47f9b5aaa0dd17042f8f1f47a1c6402da40b4f547695c67"}
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMg
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMg
+Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_name":"IloybGtPaTh2Ym05MGFXWnBZMkYwYVc5dUxXTmxiblJsY2k5T2IzUnBabWxqWVhScGIyNHZNZyI=--c786ed139303e5e8e47f9b5aaa0dd17042f8f1f47a1c6402da40b4f547695c67"}
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMg
+Started GET "/notifications" for ::1 at 2022-05-24 11:20:49 +0200
+Processing by NotificationsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/index.html.erb within layouts/application
+  [1m[36mNotification Load (0.2ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."email" = $1[0m  [["email", "henk@test.com"]]
+  ↳ app/views/notifications/index.html.erb:13
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 2.8ms | Allocations: 672)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 2.3ms | Allocations: 674)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 1.6ms | Allocations: 599)
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notifications/index.html.erb:32
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 1.9ms | Allocations: 599)
+  Rendered notifications/index.html.erb within layouts/application (Duration: 17.1ms | Allocations: 4266)
+  Rendered layout layouts/application.html.erb (Duration: 23.7ms | Allocations: 7285)
+Completed 200 OK in 30ms (Views: 23.4ms | ActiveRecord: 1.3ms | Allocations: 8987)
+
+
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMQ
+Started GET "/notifications/1" for ::1 at 2022-05-24 11:20:50 +0200
+Processing by NotificationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNotification Load (0.6ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notifications_controller.rb:67:in `set_notification'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 2.6ms | Allocations: 669)
+  [1m[36mActionText::RichText Load (0.5ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Notification"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/notifications/show.html.erb:28
+  Rendered /home/maxl/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.7ms | Allocations: 269)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."notification_id" = $1[0m  [["notification_id", 1]]
+  ↳ app/views/notifications/_comments.html.erb:4
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 12)
+  Rendered comments/_new.html.erb (Duration: 1.3ms | Allocations: 471)
+  Rendered notifications/_comments.html.erb (Duration: 6.0ms | Allocations: 1343)
+  Rendered notifications/show.html.erb within layouts/application (Duration: 18.7ms | Allocations: 4075)
+  Rendered layout layouts/application.html.erb (Duration: 27.0ms | Allocations: 7054)
+Completed 200 OK in 36ms (Views: 27.2ms | ActiveRecord: 2.1ms | Allocations: 9179)
+
+
+Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_name":"IloybGtPaTh2Ym05MGFXWnBZMkYwYVc5dUxXTmxiblJsY2k5T2IzUnBabWxqWVhScGIyNHZNUSI=--cbdeeeee4c993522e3cf79f8a80089f33d0a34556e9e12173b608ac0b52f5f12"}
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMQ
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMQ
+Started GET "/notifications/1" for ::1 at 2022-05-24 11:20:57 +0200
+Processing by NotificationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNotification Load (0.2ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notifications_controller.rb:67:in `set_notification'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 3.6ms | Allocations: 1038)
+  [1m[36mActionText::RichText Load (0.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Notification"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/notifications/show.html.erb:28
+  Rendered /home/maxl/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 2.1ms | Allocations: 542)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."notification_id" = $1[0m  [["notification_id", 1]]
+  ↳ app/views/notifications/_comments.html.erb:4
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 16)
+  Rendered comments/_new.html.erb (Duration: 2.7ms | Allocations: 711)
+  Rendered notifications/_comments.html.erb (Duration: 6.9ms | Allocations: 1779)
+  Rendered notifications/show.html.erb within layouts/application (Duration: 21.8ms | Allocations: 6223)
+  Rendered layout layouts/application.html.erb (Duration: 28.3ms | Allocations: 9719)
+Completed 200 OK in 36ms (Views: 30.4ms | ActiveRecord: 1.3ms | Allocations: 12420)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2022-05-24 11:20:57 +0200
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMQ
+Started GET "/cable" for ::1 at 2022-05-24 11:20:57 +0200
+Started GET "/cable/" [WebSocket] for ::1 at 2022-05-24 11:20:57 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMQ
+Started GET "/notifications/1/edit" for ::1 at 2022-05-24 11:21:02 +0200
+Processing by NotificationsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notifications_controller.rb:67:in `set_notification'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/edit.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Notification"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/notifications/_form.html.erb:21
+  Rendered notifications/_form.html.erb (Duration: 12.7ms | Allocations: 3282)
+  Rendered notifications/edit.html.erb within layouts/application (Duration: 14.5ms | Allocations: 3646)
+  Rendered layout layouts/application.html.erb (Duration: 21.7ms | Allocations: 6634)
+Completed 200 OK in 31ms (Views: 22.5ms | ActiveRecord: 1.0ms | Allocations: 8862)
+
+
+Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_name":"IloybGtPaTh2Ym05MGFXWnBZMkYwYVc5dUxXTmxiblJsY2k5T2IzUnBabWxqWVhScGIyNHZNUSI=--cbdeeeee4c993522e3cf79f8a80089f33d0a34556e9e12173b608ac0b52f5f12"}
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMQ
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMQ
+Started GET "/notifications" for ::1 at 2022-05-24 11:21:08 +0200
+Processing by NotificationsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notifications/index.html.erb within layouts/application
+  [1m[36mNotification Load (0.4ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."email" = $1[0m  [["email", "henk@test.com"]]
+  ↳ app/views/notifications/index.html.erb:13
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 2.9ms | Allocations: 672)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 2.3ms | Allocations: 674)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 1.3ms | Allocations: 600)
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notifications/index.html.erb:32
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/notifications/_notification.html.erb:2
+  Rendered notifications/_notification.html.erb (Duration: 2.5ms | Allocations: 599)
+  Rendered notifications/index.html.erb within layouts/application (Duration: 26.5ms | Allocations: 4583)
+  Rendered layout layouts/application.html.erb (Duration: 31.6ms | Allocations: 7569)
+Completed 200 OK in 40ms (Views: 31.1ms | ActiveRecord: 1.7ms | Allocations: 9340)
+
+
+Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_name":"IloybGtPaTh2Ym05MGFXWnBZMkYwYVc5dUxXTmxiblJsY2k5T2IzUnBabWxqWVhScGIyNHZNUSI=--cbdeeeee4c993522e3cf79f8a80089f33d0a34556e9e12173b608ac0b52f5f12"}
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMQ
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vbm90aWZpY2F0aW9uLWNlbnRlci9Ob3RpZmljYXRpb24vMQ

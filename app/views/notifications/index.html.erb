@@ -1,14 +1,16 @@
 <p style="color: green"><%= notice %></p>
-<h1>Notification Center</h1>
 
-<div id="notifications">
+<%= link_to "New notification", new_notification_path %>
+
+<h1>Inbox</h1>
+<div id="notifications_received">
   <table>
     <tr>
       <th>From</th>
       <th>Subject</th>
       <th>When</th>
     </tr>
-  <% @notifications.each do |notification| %>
+  <% @notifications_received.each do |notification| %>
     <tr>
       <%= render notification %>
       <td>
@@ -19,4 +21,21 @@
   <table>
 </div>
 
-<%= link_to "New notification", new_notification_path %>
+<h1>Sent</h1>
+<div id="notifications_received">
+  <table>
+    <tr>
+      <th>From</th>
+      <th>Subject</th>
+      <th>When</th>
+    </tr>
+  <% @notifications_sent.each do |notification| %>
+    <tr>
+      <%= render notification %>
+        <td>
+          <%= link_to "Open", notification %>
+        </td>
+    </tr>
+  <% end %>
+  <table>
+</div>

@@ -7,3 +7,10 @@
   <td>
     <%= time_tag notification.created_at, "data-local":"time-ago" %>
   </td>
+  <td>
+    <% if notification.seen %>
+      <%= "Read" %>
+    <% else %>
+      <%= "Unread" %>
+    <% end %>
+  </td>

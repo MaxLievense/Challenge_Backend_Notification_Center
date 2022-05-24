@@ -1,19 +1,32 @@
 <%= turbo_stream_from @notification %>
 
+<%# logical to make notification seen after opening %>
+<% if !@notification.seen && @notification.email==current_user.email %>
+  <% new_Notification = Notification.find(@notification.id) %>
+  <% @notification.seen = true %>
+  <% new_Notification.seen = true %>
+  <% new_Notification.save %>
+<% end %>
+
+<div>
+  <%= link_to " << Back to notifications", notifications_path %> <br>
+  <% if @notification.user_id == current_user.id %>
+    <%= link_to "Edit this notification", edit_notification_path(@notification) %>
+  <% end %>
+</div>
+
+
 <p style="color: green"><%= notice %></p>
 <table>
     <tr>
       <%= render @notification %>
+      <% if current_user.id == @notification.email || @notification.id %>
+        <td> <%= button_to "Delete", @notification, method: :delete %> </td>
+      <% end %>
     </tr>
     <tr>
-      <td colspan="3"> <%= @notification.description%> </td>
+      <td colspan="100%"> <%= @notification.description%> </td>
     </tr>
 </table>
+
 <%= render "notifications/comments", notification:@notification%>
-
-<div>
-  <%= link_to "Edit this notification", edit_notification_path(@notification) %> |
-  <%= link_to "Back to notifications", notifications_path %>
-
-  <%= button_to "Destroy this notification", @notification, method: :delete %>
-</div>
