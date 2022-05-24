@@ -1,8 +1,14 @@
 <%= turbo_stream_from @notification %>
 
 <p style="color: green"><%= notice %></p>
-
-<%= render @notification %>
+<table>
+    <tr>
+      <%= render @notification %>
+    </tr>
+    <tr>
+      <td colspan="3"> <%= @notification.description%> </td>
+    </tr>
+</table>
 <%= render "notifications/comments", notification:@notification%>
 
 <div>

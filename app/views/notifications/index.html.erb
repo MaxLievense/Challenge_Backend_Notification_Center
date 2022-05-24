@@ -2,12 +2,21 @@
 <h1>Notification Center</h1>
 
 <div id="notifications">
+  <table>
+    <tr>
+      <th>From</th>
+      <th>Subject</th>
+      <th>When</th>
+    </tr>
   <% @notifications.each do |notification| %>
-    <%= render notification %>
-    <p>
-      <%= link_to "Show this notification", notification %>
-    </p>
+    <tr>
+      <%= render notification %>
+      <td>
+        <%= link_to "Open", notification %>
+      </td>
+    </tr>
   <% end %>
+  <table>
 </div>
 
 <%= link_to "New notification", new_notification_path %>

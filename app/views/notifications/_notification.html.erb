@@ -1,21 +1,9 @@
-<div id="<%= dom_id notification %>">
-  <p>
-    <strong>Title:</strong>
-    <%= notification.title %>
-  </p>
-
-  <p>
-    <strong>Sender:</strong>
+  <td>
     <%= User.find(notification.user_id).email%>
-    Sent <%= time_tag notification.created_at, "data-local":"time-ago" %>
-  </p>
-
-  
-
-
-  <p>
-    <strong>Description:</strong>
-    <%= notification.description %>
-  </p>
-
-</div>
+  </td>
+  <td>
+    <%= notification.title %>
+  </td>
+  <td>
+    <%= time_tag notification.created_at, "data-local":"time-ago" %>
+  </td>
