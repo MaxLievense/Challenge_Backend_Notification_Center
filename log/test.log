@@ -1246,3 +1246,101 @@ INSERT INTO "comments" ("id", "notification_id", "content", "created_at", "updat
 INSERT INTO "notifications" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2022-05-23 14:50:48.382174', '2022-05-23 14:50:48.382174'), (298486374, 'MyString', 'MyText', '2022-05-23 14:50:48.382174', '2022-05-23 14:50:48.382174');
 INSERT INTO "users" ("id", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (980190962, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, '2022-05-23 14:50:48.382214', '2022-05-23 14:50:48.382214'), (298486374, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, '2022-05-23 14:50:48.382214', '2022-05-23 14:50:48.382214')[0m
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "action_text_rich_texts" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_variant_records" DISABLE TRIGGER ALL;ALTER TABLE "notifications" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_blobs" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_attachments" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[31mDELETE FROM "action_text_rich_texts";
+DELETE FROM "comments";
+DELETE FROM "notifications";
+DELETE FROM "users";
+INSERT INTO "comments" ("id", "notification_id", "content", "created_at", "updated_at", "user_id") VALUES (980190962, 980190962, 'MyText', '2022-05-24 14:59:44.637392', '2022-05-24 14:59:44.637392', DEFAULT), (298486374, 298486374, 'MyText', '2022-05-24 14:59:44.637392', '2022-05-24 14:59:44.637392', DEFAULT);
+INSERT INTO "notifications" ("id", "title", "description", "created_at", "updated_at", "user_id", "email", "seen") VALUES (980190962, 'MyString', 'MyText', '2022-05-24 14:59:44.642227', '2022-05-24 14:59:44.642227', DEFAULT, DEFAULT, DEFAULT), (298486374, 'MyString', 'MyText', '2022-05-24 14:59:44.642227', '2022-05-24 14:59:44.642227', DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO "users" ("id", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "is_admin") VALUES (980190962, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, '2022-05-24 14:59:44.643474', '2022-05-24 14:59:44.643474', DEFAULT), (298486374, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, '2022-05-24 14:59:44.643474', '2022-05-24 14:59:44.643474', DEFAULT)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "action_text_rich_texts" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_variant_records" DISABLE TRIGGER ALL;ALTER TABLE "notifications" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_blobs" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_attachments" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[31mDELETE FROM "action_text_rich_texts";
+DELETE FROM "comments";
+DELETE FROM "notifications";
+DELETE FROM "users";
+INSERT INTO "comments" ("id", "notification_id", "content", "created_at", "updated_at", "user_id") VALUES (980190962, 980190962, 'MyText', '2022-05-24 14:59:44.666422', '2022-05-24 14:59:44.666422', DEFAULT), (298486374, 298486374, 'MyText', '2022-05-24 14:59:44.666422', '2022-05-24 14:59:44.666422', DEFAULT);
+INSERT INTO "notifications" ("id", "title", "description", "created_at", "updated_at", "user_id", "email", "seen") VALUES (980190962, 'MyString', 'MyText', '2022-05-24 14:59:44.666505', '2022-05-24 14:59:44.666505', DEFAULT, DEFAULT, DEFAULT), (298486374, 'MyString', 'MyText', '2022-05-24 14:59:44.666505', '2022-05-24 14:59:44.666505', DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO "users" ("id", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "is_admin") VALUES (980190962, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, '2022-05-24 14:59:44.666536', '2022-05-24 14:59:44.666536', DEFAULT), (298486374, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, '2022-05-24 14:59:44.666536', '2022-05-24 14:59:44.666536', DEFAULT)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "action_text_rich_texts" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_variant_records" DISABLE TRIGGER ALL;ALTER TABLE "notifications" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_blobs" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_attachments" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mDELETE FROM "action_text_rich_texts";
+DELETE FROM "comments";
+DELETE FROM "notifications";
+DELETE FROM "users";
+INSERT INTO "comments" ("id", "notification_id", "content", "created_at", "updated_at", "user_id") VALUES (980190962, 980190962, 'MyText', '2022-05-24 14:59:44.672579', '2022-05-24 14:59:44.672579', DEFAULT), (298486374, 298486374, 'MyText', '2022-05-24 14:59:44.672579', '2022-05-24 14:59:44.672579', DEFAULT);
+INSERT INTO "notifications" ("id", "title", "description", "created_at", "updated_at", "user_id", "email", "seen") VALUES (980190962, 'MyString', 'MyText', '2022-05-24 14:59:44.672636', '2022-05-24 14:59:44.672636', DEFAULT, DEFAULT, DEFAULT), (298486374, 'MyString', 'MyText', '2022-05-24 14:59:44.672636', '2022-05-24 14:59:44.672636', DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO "users" ("id", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "is_admin") VALUES (980190962, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, '2022-05-24 14:59:44.672664', '2022-05-24 14:59:44.672664', DEFAULT), (298486374, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, '2022-05-24 14:59:44.672664', '2022-05-24 14:59:44.672664', DEFAULT)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "action_text_rich_texts" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_variant_records" DISABLE TRIGGER ALL;ALTER TABLE "notifications" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_blobs" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_attachments" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[31mDELETE FROM "action_text_rich_texts";
+DELETE FROM "comments";
+DELETE FROM "notifications";
+DELETE FROM "users";
+INSERT INTO "comments" ("id", "notification_id", "content", "created_at", "updated_at", "user_id") VALUES (980190962, 980190962, 'MyText', '2022-05-24 14:59:44.679928', '2022-05-24 14:59:44.679928', DEFAULT), (298486374, 298486374, 'MyText', '2022-05-24 14:59:44.679928', '2022-05-24 14:59:44.679928', DEFAULT);
+INSERT INTO "notifications" ("id", "title", "description", "created_at", "updated_at", "user_id", "email", "seen") VALUES (980190962, 'MyString', 'MyText', '2022-05-24 14:59:44.680055', '2022-05-24 14:59:44.680055', DEFAULT, DEFAULT, DEFAULT), (298486374, 'MyString', 'MyText', '2022-05-24 14:59:44.680055', '2022-05-24 14:59:44.680055', DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO "users" ("id", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "is_admin") VALUES (980190962, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, '2022-05-24 14:59:44.680091', '2022-05-24 14:59:44.680091', DEFAULT), (298486374, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, '2022-05-24 14:59:44.680091', '2022-05-24 14:59:44.680091', DEFAULT)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "action_text_rich_texts" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_variant_records" DISABLE TRIGGER ALL;ALTER TABLE "notifications" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_blobs" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_attachments" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[31mDELETE FROM "action_text_rich_texts";
+DELETE FROM "comments";
+DELETE FROM "notifications";
+DELETE FROM "users";
+INSERT INTO "comments" ("id", "notification_id", "content", "created_at", "updated_at", "user_id") VALUES (980190962, 980190962, 'MyText', '2022-05-24 14:59:44.687186', '2022-05-24 14:59:44.687186', DEFAULT), (298486374, 298486374, 'MyText', '2022-05-24 14:59:44.687186', '2022-05-24 14:59:44.687186', DEFAULT);
+INSERT INTO "notifications" ("id", "title", "description", "created_at", "updated_at", "user_id", "email", "seen") VALUES (980190962, 'MyString', 'MyText', '2022-05-24 14:59:44.687246', '2022-05-24 14:59:44.687246', DEFAULT, DEFAULT, DEFAULT), (298486374, 'MyString', 'MyText', '2022-05-24 14:59:44.687246', '2022-05-24 14:59:44.687246', DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO "users" ("id", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "is_admin") VALUES (980190962, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, '2022-05-24 14:59:44.687274', '2022-05-24 14:59:44.687274', DEFAULT), (298486374, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, '2022-05-24 14:59:44.687274', '2022-05-24 14:59:44.687274', DEFAULT)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "action_text_rich_texts" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_variant_records" DISABLE TRIGGER ALL;ALTER TABLE "notifications" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_blobs" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_attachments" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[31mDELETE FROM "action_text_rich_texts";
+DELETE FROM "comments";
+DELETE FROM "notifications";
+DELETE FROM "users";
+INSERT INTO "comments" ("id", "notification_id", "content", "created_at", "updated_at", "user_id") VALUES (980190962, 980190962, 'MyText', '2022-05-24 14:59:44.695785', '2022-05-24 14:59:44.695785', DEFAULT), (298486374, 298486374, 'MyText', '2022-05-24 14:59:44.695785', '2022-05-24 14:59:44.695785', DEFAULT);
+INSERT INTO "notifications" ("id", "title", "description", "created_at", "updated_at", "user_id", "email", "seen") VALUES (980190962, 'MyString', 'MyText', '2022-05-24 14:59:44.695865', '2022-05-24 14:59:44.695865', DEFAULT, DEFAULT, DEFAULT), (298486374, 'MyString', 'MyText', '2022-05-24 14:59:44.695865', '2022-05-24 14:59:44.695865', DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO "users" ("id", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "is_admin") VALUES (980190962, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, '2022-05-24 14:59:44.695908', '2022-05-24 14:59:44.695908', DEFAULT), (298486374, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, '2022-05-24 14:59:44.695908', '2022-05-24 14:59:44.695908', DEFAULT)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "action_text_rich_texts" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_variant_records" DISABLE TRIGGER ALL;ALTER TABLE "notifications" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_blobs" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_attachments" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[31mDELETE FROM "action_text_rich_texts";
+DELETE FROM "comments";
+DELETE FROM "notifications";
+DELETE FROM "users";
+INSERT INTO "comments" ("id", "notification_id", "content", "created_at", "updated_at", "user_id") VALUES (980190962, 980190962, 'MyText', '2022-05-24 14:59:44.704677', '2022-05-24 14:59:44.704677', DEFAULT), (298486374, 298486374, 'MyText', '2022-05-24 14:59:44.704677', '2022-05-24 14:59:44.704677', DEFAULT);
+INSERT INTO "notifications" ("id", "title", "description", "created_at", "updated_at", "user_id", "email", "seen") VALUES (980190962, 'MyString', 'MyText', '2022-05-24 14:59:44.704781', '2022-05-24 14:59:44.704781', DEFAULT, DEFAULT, DEFAULT), (298486374, 'MyString', 'MyText', '2022-05-24 14:59:44.704781', '2022-05-24 14:59:44.704781', DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO "users" ("id", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "is_admin") VALUES (980190962, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, '2022-05-24 14:59:44.704828', '2022-05-24 14:59:44.704828', DEFAULT), (298486374, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, '2022-05-24 14:59:44.704828', '2022-05-24 14:59:44.704828', DEFAULT)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "action_text_rich_texts" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_variant_records" DISABLE TRIGGER ALL;ALTER TABLE "notifications" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_blobs" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_attachments" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[31mDELETE FROM "action_text_rich_texts";
+DELETE FROM "comments";
+DELETE FROM "notifications";
+DELETE FROM "users";
+INSERT INTO "comments" ("id", "notification_id", "content", "created_at", "updated_at", "user_id") VALUES (980190962, 980190962, 'MyText', '2022-05-24 14:59:44.711488', '2022-05-24 14:59:44.711488', DEFAULT), (298486374, 298486374, 'MyText', '2022-05-24 14:59:44.711488', '2022-05-24 14:59:44.711488', DEFAULT);
+INSERT INTO "notifications" ("id", "title", "description", "created_at", "updated_at", "user_id", "email", "seen") VALUES (980190962, 'MyString', 'MyText', '2022-05-24 14:59:44.711565', '2022-05-24 14:59:44.711565', DEFAULT, DEFAULT, DEFAULT), (298486374, 'MyString', 'MyText', '2022-05-24 14:59:44.711565', '2022-05-24 14:59:44.711565', DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO "users" ("id", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "is_admin") VALUES (980190962, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, '2022-05-24 14:59:44.711599', '2022-05-24 14:59:44.711599', DEFAULT), (298486374, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, '2022-05-24 14:59:44.711599', '2022-05-24 14:59:44.711599', DEFAULT)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
