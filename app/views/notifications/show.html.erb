@@ -7,26 +7,30 @@
   <% new_Notification.seen = true %>
   <% new_Notification.save %>
 <% end %>
+<p style="color: green"><%= notice %></p>
 
 <div>
-  <%= link_to " << Back to notifications", notifications_path %> <br>
+  <%= button_to " << Back to notifications", notifications_path, :method => :get %> <br>
   <% if @notification.user_id == current_user.id %>
-    <%= link_to "Edit this notification", edit_notification_path(@notification) %>
+    <%= button_to "Edit this notification", edit_notification_path(@notification), :method => :get%>
   <% end %>
 </div>
 
+<div>
+  <h3>Notification</h3>
+  <table>
+      <tr>
+        <%= render @notification %>
+        <% if current_user.id == @notification.email || @notification.id %>
+          <td> <%= button_to "Delete", @notification, method: :delete %> </td>
+        <% end %>
+      </tr>
+      <tr>
+        <td colspan="100%"> <%= @notification.description%> </td>
+      </tr>
+  </table>
+</div>
 
-<p style="color: green"><%= notice %></p>
-<table>
-    <tr>
-      <%= render @notification %>
-      <% if current_user.id == @notification.email || @notification.id %>
-        <td> <%= button_to "Delete", @notification, method: :delete %> </td>
-      <% end %>
-    </tr>
-    <tr>
-      <td colspan="100%"> <%= @notification.description%> </td>
-    </tr>
-</table>
-
+<div>
 <%= render "notifications/comments", notification:@notification%>
+<div>

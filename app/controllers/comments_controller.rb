@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
     before_action :set_notification
-    broadcasts_to :notification
+    #broadcasts_to :notification
 
     def create
         @notification.comments.create! params.required(:comment).permit(:content)
