@@ -26,6 +26,7 @@
         <%= button_to "Login", new_user_session_path, class:"nav-link", form: {style: 'display:inline-block;'}, :method => :get %>
       <% end %>
     </header>
+    <%= render "layouts/flash" %>
     <%= yield %>
   </body>
 </html>

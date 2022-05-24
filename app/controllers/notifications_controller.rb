@@ -22,37 +22,28 @@ class NotificationsController < ApplicationController
 
   # POST /notifications or /notifications.json
   def create
-    notification_params['email'].split(';').each do |email|
-      puts email
-      @single_notification = Notification.new(notification_params)
-      @single_notification.user_id = current_user.id
-      @single_notification.email = email
-      if !@single_notification.save
-        respond_to do |format|
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @notification.errors, status: :unprocessable_entity }
-        end
+    email_list = notification_params['email'].split(';').uniq
+    if email_list.count == 0 || notification_params['title'] == ""
+      flash[:red] = "For a notification, atleast a 'Title' and an 'Email' is required."
+      redirect_to '/notifications/new'
+      return 
+    else
+      email_list.each do |email|
+        single_notification = Notification.new(notification_params)
+        single_notification.user_id = current_user.id
+        single_notification.email = email
       end
     end
-    redirect_to :action => 'index', notice: "Notification was successfully created."
+    flash[:green] = "Notification was successfully created."
+    redirect_to :action => 'index'
     # TODO NotificationsMailer.recieved(@notification).deliver_later
-
-    #respond_to do |format|
-    #  if @notification.save
-    #    format.html { redirect_to notification_url(@notification), notice: "Notification was successfully created." }
-    #    format.json { render :show, status: :created, location: @notification }
-    #  else
-    #    format.html { render :new, status: :unprocessable_entity }
-    #    format.json { render json: @notification.errors, status: :unprocessable_entity }
-    #  end
-    #end
   end
 
   # PATCH/PUT /notifications/1 or /notifications/1.json
   def update
     respond_to do |format|
       if @notification.update(notification_params)
-        format.html { redirect_to notification_url(@notification), notice: "Notification was successfully updated." }
+        format.html { redirect_to notification_url(@notification), green: "Notification was successfully updated." }
         format.json { render :show, status: :ok, location: @notification }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -66,7 +57,7 @@ class NotificationsController < ApplicationController
     @notification.destroy
 
     respond_to do |format|
-      format.html { redirect_to notifications_url, notice: "Notification was successfully destroyed." }
+      format.html { redirect_to notifications_url, green: "Notification was successfully destroyed." }
       format.json { head :no_content }
     end
   end

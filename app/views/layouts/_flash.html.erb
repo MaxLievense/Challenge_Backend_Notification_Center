@@ -1,0 +1,7 @@
+<%# :danger, :info, :warning, :success, :messages %>
+<% flash.each do |type, msg| %>
+    <% type = 'green' if type == 'notice'%>
+    <div>
+        <p style="color:<%= type %>"><%= msg %></p>
+    </div>
+<% end %>
