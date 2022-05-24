@@ -3,8 +3,8 @@ class NotificationsController < ApplicationController
   before_action :authenticate_user!
   # GET /notifications or /notifications.json
   def index
-    @notifications_received = Notification.where(email: current_user.email)
-    @notifications_sent = Notification.where(user_id: current_user.id)
+    @notifications_received = Notification.where(email: current_user.email).order("created_at DESC")
+    @notifications_sent = Notification.where(user_id: current_user.id).order("created_at DESC")
   end
 
   # GET /notifications/1 or /notifications/1.json

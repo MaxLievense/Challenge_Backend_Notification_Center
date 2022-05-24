@@ -14,7 +14,8 @@
   <body>
     <header>
       <% if current_user %>
-        Logged in as: <%= current_user.email %> <%= button_to "Sign out", destroy_user_session_path, method: :delete%>
+        Logged in as<b><%= " admin" if current_user.is_admin%></b>: <i><%= current_user.email %></i>
+        <%= button_to "Sign out", destroy_user_session_path, form: {style: 'display:inline-block;'}, method: :delete%>
       <% else %>
         <%= link_to "Sign up", new_user_registration_path, class:"nav-link"%>
         or

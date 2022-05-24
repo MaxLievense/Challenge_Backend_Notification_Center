@@ -1,41 +1,12 @@
 <p style="color: green"><%= notice %></p>
-
-<%= link_to "New notification", new_notification_path %>
+<% if current_user.is_admin %>
+  <%= button_to "New notification", new_notification_path, :method => :get %>
+<% end %>
 
 <h1>Inbox</h1>
-<div id="notifications_received">
-  <table>
-    <tr>
-      <th>From</th>
-      <th>Subject</th>
-      <th>When</th>
-    </tr>
-  <% @notifications_received.each do |notification| %>
-    <tr>
-      <%= render notification %>
-      <td>
-        <%= link_to "Open", notification %>
-      </td>
-    </tr>
-  <% end %>
-  <table>
-</div>
+<%= render :partial => 'notification_table', locals: {notifications: @notifications_received} %>
 
+<% if current_user.is_admin %>
 <h1>Sent</h1>
-<div id="notifications_received">
-  <table>
-    <tr>
-      <th>From</th>
-      <th>Subject</th>
-      <th>When</th>
-    </tr>
-  <% @notifications_sent.each do |notification| %>
-    <tr>
-      <%= render notification %>
-        <td>
-          <%= link_to "Open", notification %>
-        </td>
-    </tr>
-  <% end %>
-  <table>
-</div>
+<%= render :partial => 'notification_table', locals: {notifications: @notifications_sent} %>
+<% end %>

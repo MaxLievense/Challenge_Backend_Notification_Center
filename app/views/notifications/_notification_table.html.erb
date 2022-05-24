@@ -1,0 +1,22 @@
+<div id="notifications">
+  <% if notifications.count == 0 %>
+    <p><i> You do not have any notifications to show here</i></p>
+  <% else %>
+    <table>
+      <tr>
+        <th>From</th>
+        <th>To</th>
+        <th>Subject</th>
+        <th>When</th>
+      </tr>
+    <% notifications.each do |notification| %>
+      <tr>
+        <%= render notification %>
+        <td>
+          <%= link_to "Open", notification %>
+        </td>
+      </tr>
+    <% end %>
+    <table>
+  <% end %>
+</div>
