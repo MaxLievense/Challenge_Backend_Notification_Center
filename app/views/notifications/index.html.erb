@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 <% if current_user.is_admin %>
-  <%= button_to "New notification", new_notification_path, :method => :get %>
+  <%= button_to "New notification", new_notification_path, :method => :get, form: {style: 'display:inline-block;'} %>
 <% end %>
 
 <h1>Inbox</h1>

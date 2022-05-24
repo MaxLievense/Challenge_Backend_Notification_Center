@@ -10,9 +10,9 @@
 <p style="color: green"><%= notice %></p>
 
 <div>
-  <%= button_to " << Back to notifications", notifications_path, :method => :get %> <br>
+  <%= button_to "Back to notifications", notifications_path, :method => :get, form: {style: 'display:inline-block;'}%>
   <% if @notification.user_id == current_user.id %>
-    <%= button_to "Edit this notification", edit_notification_path(@notification), :method => :get%>
+    <%= button_to "Edit this notification", edit_notification_path(@notification), :method => :get, form: {style: 'display:inline-block;'}%>
   <% end %>
 </div>
 
