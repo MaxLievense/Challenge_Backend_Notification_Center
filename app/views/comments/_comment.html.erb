@@ -1,4 +1,5 @@
 <div id="<%= dom_id(comment) %>">
+    <b><%= User.find(comment.user_id).email%></b>:
     <%= comment.content %>
-    | <%= time_tag comment.created_at, "data-local":"time-ago" %>
+    <i>(<%= time_tag comment.created_at, "data-local":"time-ago" %>)</i>
 </div>

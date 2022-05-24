@@ -1,5 +1,6 @@
 <%= form_with model: [ notification, Comment.new ] do |form| %>
-    Your comment: <br>
-    <%= form.text_area :content, size:"20x5" %>
+    Add a comment: <br>
+    <%= form.text_area :content, size:"20x2" %>
+    <%= form.number_field :user_id, class:"form-control", value:current_user.id, type: :hidden %>
     <%= form.submit %>
 <% end %>

@@ -1,9 +1,10 @@
 class CommentsController < ApplicationController
     before_action :set_notification
+    before_action :authenticate_user!
     #broadcasts_to :notification
 
     def create
-        @notification.comments.create! params.required(:comment).permit(:content)
+        @notification.comments.create! params.required(:comment).permit(:content,:user_id)
         redirect_to @notification
     end
 

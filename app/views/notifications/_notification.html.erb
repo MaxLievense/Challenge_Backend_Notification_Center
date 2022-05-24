@@ -1,6 +1,3 @@
-  <% if !notification.seen %>
-    </b>
-  <% end %>
   <td>
     <%= User.find(notification.user_id).email%>
   </td>
@@ -18,6 +15,5 @@
       <%= "Read" %>
     <% else %>
       <%= "Unread" %>
-      </b>
     <% end %>
   </td>
