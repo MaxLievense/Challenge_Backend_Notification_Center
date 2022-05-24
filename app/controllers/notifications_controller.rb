@@ -3,7 +3,7 @@ class NotificationsController < ApplicationController
   before_action :authenticate_user!
   # GET /notifications or /notifications.json
   def index
-    @notifications = Notification.all
+    @notifications = Notification.where(email: current_user.email)
   end
 
   # GET /notifications/1 or /notifications/1.json
@@ -68,6 +68,6 @@ class NotificationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def notification_params
-      params.require(:notification).permit(:title, :description)
+      params.require(:notification).permit(:title, :description, :email)
     end
 end
