@@ -22,20 +22,30 @@ class NotificationsController < ApplicationController
 
   # POST /notifications or /notifications.json
   def create
-    @notification = Notification.new(notification_params)
-    @notification.user_id = current_user.id
-    
-    respond_to do |format|
-      if @notification.save
-        format.html { redirect_to notification_url(@notification), notice: "Notification was successfully created." }
-        format.json { render :show, status: :created, location: @notification }
-      else
+    notification_params['email'].split(';').each do |email|
+      puts email
+      @single_notification = Notification.new(notification_params)
+      @single_notification.user_id = current_user.id
+      @single_notification.email = email
+      if !@single_notification.save
+        respond_to do |format|
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @notification.errors, status: :unprocessable_entity }
+        end
       end
     end
-
+    redirect_to :action => 'index', notice: "Notification was successfully created."
     # TODO NotificationsMailer.recieved(@notification).deliver_later
+
+    #respond_to do |format|
+    #  if @notification.save
+    #    format.html { redirect_to notification_url(@notification), notice: "Notification was successfully created." }
+    #    format.json { render :show, status: :created, location: @notification }
+    #  else
+    #    format.html { render :new, status: :unprocessable_entity }
+    #    format.json { render json: @notification.errors, status: :unprocessable_entity }
+    #  end
+    #end
   end
 
   # PATCH/PUT /notifications/1 or /notifications/1.json
