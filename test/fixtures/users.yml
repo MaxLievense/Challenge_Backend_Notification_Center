@@ -7,7 +7,9 @@
 one: 
   email: MyEmail1
   encrypted_password: MyPassword1
+  id: 1
 
 two:
   email: MyEmail2
   encrypted_password: MyPassword2
+  id: 2

@@ -8,4 +8,4 @@ one:
 two:
   notification: two
   content: MyText
-  user_id: 1
+  user_id: 2

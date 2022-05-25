@@ -54,6 +54,9 @@ https://github.com/MaxLievense/Challenge_Backend_Notification_Center/blob/a63fcf
 
 In hindsight, I should have used a gem for this (e.g. bootstrap).
 
+### Integration Tests
+Simple integration tests were written for the classes ```Notifications``` and ```Comments```. As ```Users``` is made with ```Devise``` I have not written tests for that class. 
+
 ### Extra's
 As I did not have that much time for the challenge, I kept the extras to a minimum.
 I did however add ```Comments``` and ```Devise```.
@@ -75,7 +78,6 @@ This is what I wanted to make, splitting the Notifications into 2 parts; the Not
 
 ### To do
 (see the project: https://github.com/MaxLievense/Challenge_Backend_Notification_Center/projects/2 ):
-* Make test tiles work (have an issue with foreignkeys)
 * Split notifications (see above)
 * Better error handling
 * Consistent user.email usages vs also using user.id

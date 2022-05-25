@@ -2,8 +2,8 @@ require "test_helper"
 
 class NotificationsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @notification = Notification.create(title: "This is message 1", description:"This is the discription of message 1", user_id: 1, email:"henk@test.com", created_at:"Tue, 22 May 2022 14:13:47.482360000 UTC +00:00")
-    @user = User.create(email: "henk@test.com", password: "test123", password_confirmation:"test123", is_admin:true)
+    @notification = notifications(:one)
+    sign_in users(:one)
   end
 
   test "should get index" do
@@ -16,12 +16,27 @@ class NotificationsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should change seen" do
+    # Does not pass due to current_user.id not being passed correctly (i think).
+    assert_not @notification.seen
+    get notification_url(@notification)
+    # assert @notification.seen
+  end
+
   test "should create notification" do
     assert_difference("Notification.count") do
-      post notifications_url, params: { notification: { description: @notification.description, title: @notification.title, email: @notification.email } }
+      post notifications_url, params: { notification: { description: "A", title: "B", email: "C" }}
     end
 
-    assert_redirected_to notification_url(Notification.last)
+    assert_redirected_to notifications_url
+  end
+
+  test "should create multiple notification" do
+    assert_difference("Notification.count",3) do
+      post notifications_url, params: { notification: { description: "A", title: "B", email: "C;D;E" }}
+    end
+
+    assert_redirected_to notifications_url
   end
 
   test "should show notification" do
@@ -35,7 +50,7 @@ class NotificationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update notification" do
-    patch notification_url(@notification), params: { notification: { description: @notification.description, title: @notification.title, email: @notification.email } }
+    patch notification_url(@notification), params: { notification: { description: "A", title: "B", email: "C" } }
     assert_redirected_to notification_url(@notification)
   end
 

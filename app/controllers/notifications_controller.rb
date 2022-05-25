@@ -32,6 +32,7 @@ class NotificationsController < ApplicationController
         single_notification = Notification.new(notification_params)
         single_notification.user_id = current_user.id
         single_notification.email = email
+        single_notification.save
       end
     end
     flash[:green] = "Notification was successfully created."

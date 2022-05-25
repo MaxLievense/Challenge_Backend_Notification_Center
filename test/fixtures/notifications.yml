@@ -4,10 +4,10 @@ one:
   title: MyString
   description: MyText
   user_id: 1
-  email: MyEmail
+  email: MyEmail1
 
 two:
   title: MyString
   description: MyText
-  user_id: 1
-  email: MyEmail
+  user_id: 2
+  email: MyEmail2

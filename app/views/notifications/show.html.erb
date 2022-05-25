@@ -21,7 +21,7 @@
   <table>
       <tr>
         <%= render @notification %>
-        <% if current_user.id == @notification.email || @notification.id %>
+        <% if current_user.is_admin && (current_user.id == @notification.email || @notification.id) %>
           <td> <%= button_to "Delete", @notification, method: :delete %> </td>
         <% end %>
       </tr>
