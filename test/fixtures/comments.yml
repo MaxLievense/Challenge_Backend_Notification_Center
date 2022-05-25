@@ -3,7 +3,9 @@
 one:
   notification: one
   content: MyText
+  user_id: 1
 
 two:
   notification: two
   content: MyText
+  user_id: 1
