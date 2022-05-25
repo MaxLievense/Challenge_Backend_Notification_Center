@@ -33,6 +33,11 @@ To split received and sent, I have created different class-variables:
 https://github.com/MaxLievense/Challenge_Backend_Notification_Center/blob/a63fcfed931834b271577bbd4c63716fd17d0946/app/controllers/notifications_controller.rb#L6-L7
 Also ordering them by newest on top.
 
+##### User.id vs User.email
+As an email can not be in the system, I decided that an email is sent to a ```email:string``` rather then ```user:references```. Then querying a user's emails with the code above.
+
+I could (and many should have) also made the ```user_id:references``` a ```user_email:references``` where a notification is sent from an email rather than an ```user_id```. This now creates an inconsistency in the references usages.
+
 ### Reusable code
 I have created several partial views that ensure that there is no duplicate could using the ```render``` function.
 A good example is:
@@ -73,6 +78,7 @@ This is what I wanted to make, splitting the Notifications into 2 parts; the Not
 * Make test tiles work (have an issue with foreignkeys)
 * Split notifications (see above)
 * Better error handling
+* Consistent user.email usages vs also using user.id
 
 ### Look under-the-hood of Rails with:
 * Performance (Querying, variable passing)
